@@ -1,7 +1,6 @@
 ﻿Ejercicio 1
 ===========
 
-
 Este proyecto es un ejemplo para tomar como base para los distintos proyecto de la materia.
 El proyecto está basado en Maven 3 y ya cuenta con un conjunto de herramientas preconfiguradas:
 
