@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class Fibonacci {
     public static void main(String[] args) {
-        int entrada;
+        int entrada = Integer.parseInt(args[0]);
 
-        Scanner scanner = new Scanner(System.in);
-        entrada = scanner.nextInt();
-        scanner.close();
+        //Scanner scanner = new Scanner(System.in);
+        //entrada = scanner.nextInt();
+        //scanner.close();
 
-        System.out.print(getResultado(entrada));
+        System.out.print("fibo<"+ entrada + ">: " + getResultado(entrada));
     }
 
     public static String getResultado(int entrada){
