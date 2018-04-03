@@ -9,7 +9,7 @@ public class Fibonacci {
         //entrada = scanner.nextInt();
         //scanner.close();
 
-        System.out.print("fibo<"+ entrada + ">: " + getResultado(entrada));
+        System.out.println("fibo<"+ entrada + ">: " + getResultado(entrada));
     }
 
     public static String getResultado(int entrada){
