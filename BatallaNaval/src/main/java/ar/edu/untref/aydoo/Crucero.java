@@ -16,9 +16,11 @@ public class Crucero extends Barco {
     public boolean estaEn(final Posicion unaPosicion) {
       // boolean estaEnPosicion = false;
        for (int i = 0; i < 2; i++) {
-           if (unaPosicion.obtenerFila() == posicionesDelCrucero[i].obtenerFila()
-                   && unaPosicion.obtenerColumna()
-                   == posicionesDelCrucero[i].obtenerColumna()) {
+           if (unaPosicion.obtenerFila()
+               ==
+               posicionesDelCrucero[i].obtenerFila()
+               && unaPosicion.obtenerColumna()
+               == posicionesDelCrucero[i].obtenerColumna()) {
                return true;
            }
        }
