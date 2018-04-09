@@ -16,14 +16,8 @@ public class Tablero {
         return ResultadoDeDisparo.AGUA;
     }
 
-    public void ubicarBote(Barco unBarco, Posicion posicion) {
+    public void ubicarBarco(Barco unBarco, Posicion posicion) {
         unBarco.setPosicion(posicion);
         listaDeBarcos.add(unBarco);
     }
-
-    public void ubicarCrucero(Barco unBarco, Posicion posicion) {
-        unBarco.setPosicion(posicion);
-        listaDeBarcos.add(unBarco);
-    }
-
 }

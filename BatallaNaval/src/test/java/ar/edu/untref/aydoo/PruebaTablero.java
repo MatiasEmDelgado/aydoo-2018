@@ -23,7 +23,7 @@ public class PruebaTablero {
     public void disparoATableroCuandoTocoUnBoteYDevuelveHundido(){
         Tablero tablero = new Tablero();
         Barco unBote = new Bote();
-        tablero.ubicarBote(unBote,new Posicion(1,1));
+        tablero.ubicarBarco(unBote,new Posicion(1,1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1,1));
         Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
     }
@@ -32,7 +32,7 @@ public class PruebaTablero {
       public void disparoATableroCuandoTocoUnCruceroYDevuelveTocado(){
         Tablero tablero = new Tablero();
         Crucero unCrucero = new Crucero();
-        tablero.ubicarCrucero(unCrucero, new Posicion(1, 1));
+        tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
         Assert.assertEquals(ResultadoDeDisparo.TOCADO, resultadoDeDisparo);
       }
