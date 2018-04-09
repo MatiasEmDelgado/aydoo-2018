@@ -10,7 +10,11 @@ public class Crucero extends Barco{
     }
 
     public boolean estaEn(Posicion unaPosicion) {
-        return true;
+        if(unaPosicion.obtenerFila() == posicionDelCrucero.obtenerFila() && unaPosicion.obtenerColumna() == posicionDelCrucero.obtenerColumna()) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     public ResultadoDeDisparo recibirDisparo() {
