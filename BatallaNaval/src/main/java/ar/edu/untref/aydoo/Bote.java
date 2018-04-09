@@ -1,17 +1,18 @@
 package ar.edu.untref.aydoo;
 
-public class Bote extends Barco{
+public class Bote extends Barco {
 
     private Posicion posicionDelBote;
 
-    public void setPosicion(Posicion unaPosicion) {
+    public void setPosicion( final Posicion unaPosicion) {
         this.posicionDelBote = unaPosicion;
     }
 
-    public boolean estaEn(Posicion unaPosicion) {
-        if(unaPosicion.obtenerFila() == posicionDelBote.obtenerFila() && unaPosicion.obtenerColumna() == posicionDelBote.obtenerColumna()) {
+    public boolean estaEn(final Posicion unaPosicion) {
+        if(unaPosicion.obtenerFila() == posicionDelBote.obtenerFila() &&
+                unaPosicion.obtenerColumna() == posicionDelBote.obtenerColumna()) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
