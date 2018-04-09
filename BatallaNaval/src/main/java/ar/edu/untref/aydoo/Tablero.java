@@ -4,26 +4,26 @@ import java.util.ArrayList;
 
 public class Tablero {
 
-    ArrayList<Bote> listaDeBotes = new ArrayList<>();
+    ArrayList<Barco> listaDeBarcos = new ArrayList<>();
     ArrayList<Crucero> listaDeCruceros = new ArrayList<>();
 
     public ResultadoDeDisparo recibirDisparo(Posicion posicionIndicada) {
-        for (Crucero crucero: listaDeCruceros) {
-            if(crucero.estaEn(posicionIndicada)){
-                return crucero.recibirDisparo();
+        for (Barco barco: listaDeBarcos) {
+            if(barco.estaEn(posicionIndicada)){
+                return barco.recibirDisparo();
             }
         }
         return ResultadoDeDisparo.AGUA;
     }
 
-    public void ubicarBote(Bote unBote, Posicion posicion) {
-        unBote.setPosicion(posicion);
-        listaDeBotes.add(unBote);
+    public void ubicarBote(Barco unBarco, Posicion posicion) {
+        unBarco.setPosicion(posicion);
+        listaDeBarcos.add(unBarco);
     }
 
-    public void ubicarCrucero(Crucero unCrucero, Posicion posicion) {
-        unCrucero.setPosicion(posicion);
-        listaDeCruceros.add(unCrucero);
+    public void ubicarCrucero(Barco unBarco, Posicion posicion) {
+        unBarco.setPosicion(posicion);
+        listaDeBarcos.add(unBarco);
     }
 
 }

@@ -19,14 +19,14 @@ public class PruebaTablero {
         Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);
     }
 
-    //@Test
-    //public void disparoATableroCuandoTocoUnBoteYDevuelveHundido(){
-    //    Tablero tablero = new Tablero();
-    //    Bote unBote = new Bote();
-    //    tablero.ubicarBote(unBote,new Posicion(1,1));
-    //    ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1,1));
-    //    Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
-    //}
+    @Test
+    public void disparoATableroCuandoTocoUnBoteYDevuelveHundido(){
+        Tablero tablero = new Tablero();
+        Barco unBote = new Bote();
+        tablero.ubicarBote(unBote,new Posicion(1,1));
+        ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1,1));
+        Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
+    }
 
      @Test
       public void disparoATableroCuandoTocoUnCruceroYDevuelveTocado(){

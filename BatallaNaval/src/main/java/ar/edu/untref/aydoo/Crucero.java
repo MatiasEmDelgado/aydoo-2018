@@ -1,6 +1,6 @@
 package ar.edu.untref.aydoo;
 
-public class Crucero {
+public class Crucero extends Barco{
 
     private Posicion posicionDelCrucero;
 
