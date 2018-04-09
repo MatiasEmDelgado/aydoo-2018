@@ -53,6 +53,6 @@ public class PruebaTablero {
         Barco unBote = new Bote();
         tablero.ubicarBarco(unBote,new Posicion(1,1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2,2));
-        Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);
+        Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);//
     }
 }
