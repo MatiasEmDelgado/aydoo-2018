@@ -4,17 +4,13 @@ public class Bote extends Barco {
 
     private Posicion posicionDelBote;
 
-    public void setPosicion( final Posicion unaPosicion) {
+    public void setPosicion(final Posicion unaPosicion) {
         this.posicionDelBote = unaPosicion;
     }
 
     public boolean estaEn(final Posicion unaPosicion) {
-        if(unaPosicion.obtenerFila() == posicionDelBote.obtenerFila() &&
-                unaPosicion.obtenerColumna() == posicionDelBote.obtenerColumna()) {
-            return true;
-        } else {
-            return false;
-        }
+        return unaPosicion.obtenerFila() == posicionDelBote.obtenerFila() &&
+                unaPosicion.obtenerColumna() == posicionDelBote.obtenerColumna();
     }
 
     public ResultadoDeDisparo recibirDisparo() {
