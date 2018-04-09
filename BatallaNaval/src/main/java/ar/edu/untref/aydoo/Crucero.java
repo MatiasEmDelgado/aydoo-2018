@@ -1,20 +1,26 @@
 package ar.edu.untref.aydoo;
 
-public class Crucero extends Barco{
+import java.util.ArrayList;
 
-    private Posicion posicionDelCrucero;
+public class Crucero extends Barco{
+    private Posicion[] posicionesDelCrucero = new Posicion[2];
+
     private int toquesDelCrucero = 0;
 
     public void setPosicion(Posicion unaPosicion) {
-        this.posicionDelCrucero = unaPosicion;
+        this.posicionesDelCrucero[0] = unaPosicion;
+        Posicion pocicionIncrementadaEnUno = new Posicion(unaPosicion.obtenerFila() + 1, unaPosicion.obtenerColumna() + 1);
+        this.posicionesDelCrucero[1] = pocicionIncrementadaEnUno;
     }
 
     public boolean estaEn(Posicion unaPosicion) {
-        if(unaPosicion.obtenerFila() == posicionDelCrucero.obtenerFila() && unaPosicion.obtenerColumna() == posicionDelCrucero.obtenerColumna()) {
-            return true;
-        }else{
-            return false;
-        }
+      // boolean estaEnPosicion = false;
+       for(int i = 0; i<2;i++) {
+           if (unaPosicion.obtenerFila() == posicionesDelCrucero[i].obtenerFila() && unaPosicion.obtenerColumna() == posicionesDelCrucero[i].obtenerColumna()) {
+               return true;
+           }
+       }
+       return false;
     }
 
     public ResultadoDeDisparo recibirDisparo() {
