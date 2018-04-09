@@ -9,4 +9,12 @@ public class Posicion {
         this.fila=fila;
         this.columna=columna;
     }
+
+    public int obtenerFila(){
+        return this.fila;
+    }
+
+    public int obtenerColumna(){
+        return this.columna;
+    }
 }

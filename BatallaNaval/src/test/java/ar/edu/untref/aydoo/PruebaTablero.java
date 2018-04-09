@@ -46,4 +46,13 @@ public class PruebaTablero {
         resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 2));
         Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
     }
+
+    @Test
+    public void disparoATableroCuandoNoTocoUnBoteYDevuelveAgua(){
+        Tablero tablero = new Tablero();
+        Barco unBote = new Bote();
+        tablero.ubicarBarco(unBote,new Posicion(1,1));
+        ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2,2));
+        Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);
+    }
 }
