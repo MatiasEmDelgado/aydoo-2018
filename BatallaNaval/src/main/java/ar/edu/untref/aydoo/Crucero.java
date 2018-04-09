@@ -9,7 +9,8 @@ public class Crucero extends Barco {
     public void setPosicion(final Posicion unaPosicion) {
         this.posicionesDelCrucero[0] = unaPosicion;
         Posicion pocicionIncrementadaEnUno = new
-                Posicion(unaPosicion.obtenerFila() + 1, unaPosicion.obtenerColumna() + 1);
+        Posicion(unaPosicion.obtenerFila() + 1,
+                unaPosicion.obtenerColumna() + 1);
         this.posicionesDelCrucero[1] = pocicionIncrementadaEnUno;
     }
 
@@ -29,7 +30,7 @@ public class Crucero extends Barco {
 
     public ResultadoDeDisparo recibirDisparo() {
         this.toquesDelCrucero++;
-        if (this.toquesDelCrucero == 2){
+        if (this.toquesDelCrucero == 2) {
             return ResultadoDeDisparo.HUNDIDO;
         } else {
             return ResultadoDeDisparo.TOCADO;

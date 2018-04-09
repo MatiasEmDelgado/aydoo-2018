@@ -5,9 +5,9 @@ public class Posicion {
     private final int fila;
     private final int columna;
 
-    public Posicion(final int fila, final int columna) {
-        this.fila = fila;
-        this.columna = columna;
+    public Posicion(final int coordenadaFila, final int coordenadaColumna) {
+        this.fila = coordenadaFila;
+        this.columna = coordenadaColumna;
     }
 
     public int obtenerFila() {
