@@ -107,5 +107,13 @@ public class PruebaTablero {
         Assert.assertEquals(2, tablero.obtenerListaDeBarcos().size());
     }
 
-
+    @Test
+    public void ubicoUnBoteAlLadoDeUnCrucero() throws BarcoEncimadoExcepcion {
+        Tablero tablero = new Tablero();
+        Bote unBote = new Bote();
+        Crucero unCrucero = new Crucero();
+        tablero.ubicarBarco(unBote, new Posicion(1, 1));
+        tablero.ubicarBarco(unCrucero, new Posicion(1, 2));
+        Assert.assertEquals(2, tablero.obtenerListaDeBarcos().size());
+    }
 }
