@@ -14,14 +14,14 @@ public class PruebaTablero {
          */
     @Test
     public void disparoATableroVacioYDevuelveAgua(){
-        Tablero tablero = new Tablero();
+        Tablero tablero = new Tablero(20, 20);
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1,1));
         Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);
     }
 
     @Test
-    public void disparoATableroCuandoTocoUnBoteYDevuelveHundido() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void disparoATableroCuandoTocoUnBoteYDevuelveHundido() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Barco unBote = new Bote();
         tablero.ubicarBarco(unBote,new Posicion(1,1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1,1));
@@ -29,8 +29,8 @@ public class PruebaTablero {
     }
 
     @Test
-    public void disparoATableroCuandoTocoUnCruceroYDevuelveTocado() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void disparoATableroCuandoTocoUnCruceroYDevuelveTocado() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Crucero unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
@@ -38,8 +38,8 @@ public class PruebaTablero {
     }
 
     @Test
-    public void disparoACruceroDosvecesYDevuelveHundido() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void disparoACruceroDosvecesYDevuelveHundido() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Crucero unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
@@ -48,8 +48,8 @@ public class PruebaTablero {
     }
 
     @Test
-    public void disparoATableroCuandoNoTocoUnBoteYDevuelveAgua() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void disparoATableroCuandoNoTocoUnBoteYDevuelveAgua() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Barco unBote = new Bote();
         tablero.ubicarBarco(unBote,new Posicion(1,1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2,2));
@@ -57,8 +57,8 @@ public class PruebaTablero {
     }
 
     @Test
-    public void disparoATableroCuandoNoTocoUnCruceroYDevuelveAgua() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void disparoATableroCuandoNoTocoUnCruceroYDevuelveAgua() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Barco unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero,new Posicion(1,1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2,2));
@@ -66,8 +66,8 @@ public class PruebaTablero {
     }
 
     @Test
-    public void disparoACruceroVerticalDosvecesYDevuelveHundido() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void disparoACruceroVerticalDosvecesYDevuelveHundido() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Crucero unCrucero = new Crucero();
         Direccion direccionVertical = new Vertical();
         unCrucero.setDireccionDelCrucero(direccionVertical);
@@ -78,8 +78,8 @@ public class PruebaTablero {
     }
 
     @Test (expected = BarcoEncimadoExcepcion.class)
-    public void ubicoBoteEncimaDeUnCruceroYDeberiaDevolverError() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void ubicoBoteEncimaDeUnCruceroYDeberiaDevolverError() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Crucero unCrucero = new Crucero();
         Direccion direccionVertical = new Vertical();
         unCrucero.setDireccionDelCrucero(direccionVertical);
@@ -89,8 +89,8 @@ public class PruebaTablero {
     }
 
     @Test (expected = BarcoEncimadoExcepcion.class)
-    public void ubicoBoteEncimaDeOtroYDeberiaDevolverError() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void ubicoBoteEncimaDeOtroYDeberiaDevolverError() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Bote unBote = new Bote();
         Bote otroBote = new Bote();
         tablero.ubicarBarco(unBote, new Posicion(1, 1));
@@ -98,8 +98,8 @@ public class PruebaTablero {
     }
 
     @Test
-    public void ubicoDosBotesUnoAbajoDelOtro() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void ubicoDosBotesUnoAbajoDelOtro() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20, 20);
         Bote unBote = new Bote();
         Bote otroBote = new Bote();
         tablero.ubicarBarco(unBote, new Posicion(1, 1));
@@ -108,12 +108,20 @@ public class PruebaTablero {
     }
 
     @Test
-    public void ubicoUnBoteAlLadoDeUnCrucero() throws BarcoEncimadoExcepcion {
-        Tablero tablero = new Tablero();
+    public void ubicoUnBoteAlLadoDeUnCrucero() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20 ,20);
         Bote unBote = new Bote();
         Crucero unCrucero = new Crucero();
         tablero.ubicarBarco(unBote, new Posicion(1, 1));
         tablero.ubicarBarco(unCrucero, new Posicion(1, 2));
         Assert.assertEquals(2, tablero.obtenerListaDeBarcos().size());
+    }
+
+    @Test (expected = BarcoFueraDelTableroExcepcion.class)
+    public void ubicoBoteFueraDelTablero() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20,20);
+        Bote unBote = new Bote();
+        Bote otroBote = new Bote();
+        tablero.ubicarBarco(unBote, new Posicion(100, 100));
     }
 }
