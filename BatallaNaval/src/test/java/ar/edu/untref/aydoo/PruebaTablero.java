@@ -97,7 +97,8 @@ public class PruebaTablero {
         tablero.ubicarBarco(otroBote, new Posicion(1, 1));
     }
 
-    public void ubicoDosBotesUnoAbajoDeOtro() throws BarcoEncimadoExcepcion {
+    @Test
+    public void ubicoDosBotesUnoAbajoDelOtro() throws BarcoEncimadoExcepcion {
         Tablero tablero = new Tablero();
         Bote unBote = new Bote();
         Bote otroBote = new Bote();
@@ -105,4 +106,6 @@ public class PruebaTablero {
         tablero.ubicarBarco(otroBote, new Posicion(1, 2));
         Assert.assertEquals(2, tablero.obtenerListaDeBarcos().size());
     }
+
+
 }

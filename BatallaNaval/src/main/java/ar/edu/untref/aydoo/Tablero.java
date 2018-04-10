@@ -21,14 +21,12 @@ public class Tablero {
         boolean barcoAgregado = false;
 
         if(listaDeBarcos.size() == 0) {
-            unBarco.setPosicion(posicion);
-            listaDeBarcos.add(unBarco);
             barcoAgregado = true;
-        }
-
-        for (Barco barco: listaDeBarcos) {
-            if(!barco.estaEn(posicion)) {
-                barcoAgregado = true;
+        } else {
+            for (Barco barco: listaDeBarcos) {
+                if(!barco.estaEn(posicion)) {
+                    barcoAgregado = true;
+                }
             }
         }
 
