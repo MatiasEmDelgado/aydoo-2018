@@ -1,7 +1,6 @@
 package ar.edu.untref.aydoo;
 
 public abstract class Barco {
-    private Posicion posicionDelBote;
 
     public abstract void setPosicion(Posicion unaPosicion);
 

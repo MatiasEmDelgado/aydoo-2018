@@ -3,15 +3,19 @@ package ar.edu.untref.aydoo;
 public class Crucero extends Barco {
 
     private Posicion[] posicionesDelCrucero = new Posicion[2];
+    private Direccion direccionDelCrucero = new Horizontal();
 
     private int toquesDelCrucero = 0;
 
     public void setPosicion(final Posicion unaPosicion) {
         this.posicionesDelCrucero[0] = unaPosicion;
-        Posicion pocicionIncrementadaEnUno = new
-        Posicion(unaPosicion.obtenerFila(),
-                unaPosicion.obtenerColumna() + 1);
-        this.posicionesDelCrucero[1] = pocicionIncrementadaEnUno;
+        Posicion otraPosicion = new Posicion(unaPosicion.obtenerFila(), unaPosicion.obtenerColumna());
+        if (this.direccionDelCrucero.estaHorizontal()) {
+            otraPosicion.setColumna(unaPosicion.obtenerColumna() + 1);
+        } else {
+            otraPosicion.setFila(unaPosicion.obtenerFila() + 1);
+        }
+        this.posicionesDelCrucero[1] = otraPosicion;
     }
 
     public boolean estaEn(final Posicion unaPosicion) {
@@ -36,5 +40,9 @@ public class Crucero extends Barco {
             return ResultadoDeDisparo.TOCADO;
         }
 
+    }
+
+    public void setDireccionDelCrucero(Direccion direccionDelCrucero) {
+        this.direccionDelCrucero = direccionDelCrucero;
     }
 }

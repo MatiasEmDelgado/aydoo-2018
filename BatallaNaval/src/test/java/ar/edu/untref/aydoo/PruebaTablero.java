@@ -28,14 +28,14 @@ public class PruebaTablero {
         Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
     }
 
-     @Test
-      public void disparoATableroCuandoTocoUnCruceroYDevuelveTocado(){
+    @Test
+    public void disparoATableroCuandoTocoUnCruceroYDevuelveTocado(){
         Tablero tablero = new Tablero();
         Crucero unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
         Assert.assertEquals(ResultadoDeDisparo.TOCADO, resultadoDeDisparo);
-      }
+    }
 
     @Test
     public void disparoACruceroDosvecesYDevuelveHundido(){
@@ -63,5 +63,17 @@ public class PruebaTablero {
         tablero.ubicarBarco(unCrucero,new Posicion(1,1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2,2));
         Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);
+    }
+
+    @Test
+    public void disparoACruceroVerticalDosvecesYDevuelveHundido(){
+        Tablero tablero = new Tablero();
+        Crucero unCrucero = new Crucero();
+        Direccion direccionVertical = new Vertical();
+        unCrucero.setDireccionDelCrucero(direccionVertical);
+        tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
+        ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
+        resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2, 1));
+        Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
     }
 }
