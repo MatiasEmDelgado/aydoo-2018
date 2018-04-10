@@ -43,7 +43,7 @@ public class PruebaTablero {
         Crucero unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
-        resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2, 2));
+        resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 2));
         Assert.assertEquals(ResultadoDeDisparo.HUNDIDO, resultadoDeDisparo);
     }
 
@@ -61,7 +61,7 @@ public class PruebaTablero {
         Tablero tablero = new Tablero();
         Barco unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero,new Posicion(1,1));
-        ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1,2));
+        ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2,2));
         Assert.assertEquals(ResultadoDeDisparo.AGUA, resultadoDeDisparo);
     }
 }
