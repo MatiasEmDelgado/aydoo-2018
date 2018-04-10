@@ -78,7 +78,7 @@ public class PruebaTablero {
     }
 
     @Test (expected = BarcoEncimadoExcepcion.class)
-    public void ubicoBoteEncimaDeUnCruceroDeberiaDevolverError() throws BarcoEncimadoExcepcion {
+    public void ubicoBoteEncimaDeUnCruceroYDeberiaDevolverError() throws BarcoEncimadoExcepcion {
         Tablero tablero = new Tablero();
         Crucero unCrucero = new Crucero();
         Direccion direccionVertical = new Vertical();
@@ -86,5 +86,14 @@ public class PruebaTablero {
         Bote unBote = new Bote();
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         tablero.ubicarBarco(unBote, new Posicion(1, 1));
+    }
+
+    @Test (expected = BarcoEncimadoExcepcion.class)
+    public void ubicoBoteEncimaDeOtroYDeberiaDevolverError() throws BarcoEncimadoExcepcion {
+        Tablero tablero = new Tablero();
+        Bote unBote = new Bote();
+        Bote otroBote = new Bote();
+        tablero.ubicarBarco(unBote, new Posicion(1, 1));
+        tablero.ubicarBarco(otroBote, new Posicion(1, 1));
     }
 }
