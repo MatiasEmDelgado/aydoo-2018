@@ -1,6 +1,7 @@
 package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Tablero {
 
@@ -16,21 +17,30 @@ public class Tablero {
     }
 
     public void ubicarBarco(final Barco unBarco, final Posicion posicion) throws BarcoEncimadoExcepcion {
+
         boolean barcoAgregado = false;
+
         if(listaDeBarcos.size() == 0) {
             unBarco.setPosicion(posicion);
             listaDeBarcos.add(unBarco);
             barcoAgregado = true;
         }
+
         for (Barco barco: listaDeBarcos) {
             if(!barco.estaEn(posicion)) {
-                unBarco.setPosicion(posicion);
-                listaDeBarcos.add(unBarco);
                 barcoAgregado = true;
             }
         }
-        if (!barcoAgregado){
+
+        if (barcoAgregado){
+            unBarco.setPosicion(posicion);
+            listaDeBarcos.add(unBarco);
+        }else {
             throw new BarcoEncimadoExcepcion();
         }
+    }
+
+    public ArrayList<Barco> obtenerListaDeBarcos() {
+        return listaDeBarcos;
     }
 }
