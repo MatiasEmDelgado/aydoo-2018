@@ -63,9 +63,10 @@ public class Tablero {
     }
 
     private boolean posicionValidaParaElTablero(Posicion posicion) {
-        if(posicion.obtenerFila() < obtenerCantidadDeFilasDelTablero()
-                &&
-                posicion.obtenerColumna() < obtenerCantidadDeColumnasDelTablero()) {
+        if(posicion.obtenerFila() > 0
+                && posicion.obtenerFila() < obtenerCantidadDeFilasDelTablero()
+                && posicion.obtenerColumna() > 0
+                && posicion.obtenerColumna() < obtenerCantidadDeColumnasDelTablero()) {
             return true;
         } else {
             return false;

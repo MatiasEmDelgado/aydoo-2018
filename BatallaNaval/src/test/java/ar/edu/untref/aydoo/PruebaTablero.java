@@ -130,4 +130,11 @@ public class PruebaTablero {
         Crucero unCrucero = new Crucero();
         tablero.ubicarBarco(unCrucero, new Posicion(20, 19));
     }
+    
+    @Test (expected = BarcoFueraDelTableroExcepcion.class)
+    public void ubicoBarcoConPosicionNegativaDeberiaLanzarExcepcion() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20,20);
+        Crucero unCrucero = new Crucero();
+        tablero.ubicarBarco(unCrucero, new Posicion(-1, 19));
+    }
 }
