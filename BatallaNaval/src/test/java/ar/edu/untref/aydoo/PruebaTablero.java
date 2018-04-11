@@ -121,7 +121,13 @@ public class PruebaTablero {
     public void ubicoBoteFueraDelTablero() throws BatallaNavalExcepcion {
         Tablero tablero = new Tablero(20,20);
         Bote unBote = new Bote();
-        Bote otroBote = new Bote();
         tablero.ubicarBarco(unBote, new Posicion(100, 100));
+    }
+
+    @Test (expected = BarcoFueraDelTableroExcepcion.class)
+    public void ubicoCruceroFueraDelTablero() throws BatallaNavalExcepcion {
+        Tablero tablero = new Tablero(20,20);
+        Crucero unCrucero = new Crucero();
+        tablero.ubicarBarco(unCrucero, new Posicion(20, 19));
     }
 }
