@@ -1,38 +1,81 @@
 package ar.edu.untref.aydoo;
-import java.util.Scanner;
+public final class Fibonacci {
 
-public class Fibonacci {
-    public static void main(String[] args) {
-        int entrada = Integer.parseInt(args[0]);
+    public static final int OPCION_ORIENTACION = 3;
+    public static final int OPCION_DIRECCION = 4;
 
-        //Scanner scanner = new Scanner(System.in);
-        //entrada = scanner.nextInt();
-        //scanner.close();
+    private Fibonacci() {
 
-        System.out.println("fibo<"+ entrada + ">: " + getResultado(entrada));
+    }
+    public static void main(final String[] args) {
+        Integer numero = Integer.parseInt(args[1]);
+        String opciones  = args[0];
+        char orientacion = opciones.charAt(OPCION_ORIENTACION);
+        char direccion = opciones.charAt(OPCION_DIRECCION);
+        boolean opcionValida = true;
+
+        if ((orientacion != 'h' && orientacion != 'v')
+                || (direccion != 'd' && direccion != 'i')) {
+           opcionValida = false;
+        }
+
+        if (opcionValida) {
+            caratula(numero, orientacion);
+            if (direccion == 'd') {
+                menorMayor(numero, orientacion);
+            } else {
+                mayorMenor(numero, orientacion);
+            }
+            if (orientacion == 'h') {
+                System.out.println("");
+            }
+        } else {
+            System.out.println("Opciones no validas.");
+        }
     }
 
-    public static String getResultado(int entrada){
-        String resultado = "";
-        for (int i = 0; i < entrada; i++) {
-            resultado = resultado+getFibonacci(i);
-            if (i != entrada - 1) {
-                resultado=resultado+" ";
+    private static void caratula(final Integer nro, final char orientacion) {
+        if (orientacion == 'h') {
+            System.out.print("fibo<" + nro + ">: ");
+        } else {
+            System.out.println("fibo<" + nro + ">: ");
+        }
+    }
+
+    public static void menorMayor(final int entrada, final char orientacion) {
+            Integer resultado;
+            for (int i = 0; i < entrada; i++) {
+                resultado = getFibonacci(i);
+                imprimir(resultado, orientacion);
             }
         }
-        return resultado;
-    }
-    private static int getFibonacci(int number) {
+
+    public static void mayorMenor(final int entrada, final char orientacion) {
+            Integer resultado;
+            for (int i = entrada - 1; i >= 0; i--) {
+                resultado = getFibonacci(i);
+                imprimir(resultado, orientacion);
+            }
+        }
+    private static int getFibonacci(final int numero) {
         int a = 0, b = 1, c = 0;
-        for (int i = 1; i < number; i++) {
+        for (int i = 1; i < numero; i++) {
             c = a + b;
             a = b;
             b = c;
         }
-        if(number == 1){
+        if (numero == 1) {
             return 1;
-        }else{
+        } else {
             return c;
+        }
+    }
+
+    private static void imprimir(final Integer nro, final char orientacion) {
+        if (orientacion == 'h') {
+            System.out.print(nro.toString() + " ");
+        } else {
+            System.out.println(nro.toString());
         }
     }
 }
