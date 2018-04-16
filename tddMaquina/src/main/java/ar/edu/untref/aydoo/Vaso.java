@@ -6,17 +6,14 @@ public class Vaso {
     private boolean contieneTe = false;
 
     public Object getCantidadDeAzucar() {
-        // TODO Auto-generated method stub
         return this.cantidadDeAzucar;
     }
 
     public boolean tieneCafe() {
-        // TODO Auto-generated method stub
         return this.contieneCafe;
     }
 
     public boolean tieneAzucar() {
-        // TODO Auto-generated method stub
         if(this.cantidadDeAzucar>0){
             return true;
         } else {
@@ -25,7 +22,6 @@ public class Vaso {
     }
 
     public boolean tieneTe() {
-        // TODO Auto-generated method stub
         return this.contieneTe;
     }
 
@@ -39,7 +35,6 @@ public class Vaso {
     }
 
     public void setTe() {
-        // TODO Auto-generated method stub
         this.contieneTe   = true;
     }
 }
