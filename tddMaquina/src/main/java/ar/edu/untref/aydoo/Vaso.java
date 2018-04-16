@@ -2,15 +2,15 @@ package ar.edu.untref.aydoo;
 
 public class Vaso {
     private int cantidadDeAzucar = 0;
-    private boolean contieneCafe = false;
-    private boolean contieneTe = false;
+    private Contenido contenido = new Vacio();
 
     public Object getCantidadDeAzucar() {
         return this.cantidadDeAzucar;
     }
 
     public boolean tieneCafe() {
-        return this.contieneCafe;
+        if (this.contenido instanceof Cafe) return true;
+        else return false;
     }
 
     public boolean tieneAzucar() {
@@ -22,7 +22,8 @@ public class Vaso {
     }
 
     public boolean tieneTe() {
-        return this.contieneTe;
+        if (this.contenido instanceof Te) return true;
+        else return false;
     }
 
     public void setAzucar(int cantidadAzucar) {
@@ -30,11 +31,11 @@ public class Vaso {
     }
 
     public void setCafe() {
-        this.contieneCafe  = true;
+        this.contenido  = new Cafe();
 
     }
 
     public void setTe() {
-        this.contieneTe   = true;
+        this.contenido = new Te();
     }
 }
