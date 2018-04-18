@@ -14,7 +14,7 @@ public final class Fibonacci {
         String opciones;
         boolean opcionValida = true;
 
-        if( args.length == 1) {
+        if ( args.length == 1) {
             numero = Integer.parseInt(args[0]);
             orientacion = 'h';
             direccion = 'd';
