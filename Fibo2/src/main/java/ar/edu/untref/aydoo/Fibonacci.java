@@ -8,12 +8,24 @@ public final class Fibonacci {
 
     }
     public static void main(final String[] args) {
-        Integer numero = Integer.parseInt(args[1]);
-        String opciones  = args[0];
-        char orientacion = opciones.charAt(OPCION_ORIENTACION);
-        char direccion = opciones.charAt(OPCION_DIRECCION);
+        Integer numero;
+        char orientacion;
+        char direccion;
+        String opciones;
         boolean opcionValida = true;
 
+        if( args.length == 1) {
+            numero = Integer.parseInt(args[0]);
+            orientacion = 'h';
+            direccion = 'd';
+            opcionValida = true;
+        } else {
+            numero = Integer.parseInt(args[1]);
+            opciones  = args[0];
+            orientacion = opciones.charAt(OPCION_ORIENTACION);
+            direccion = opciones.charAt(OPCION_DIRECCION);
+            opcionValida = true;
+        }
         if ((orientacion != 'h' && orientacion != 'v')
                 || (direccion != 'd' && direccion != 'i')) {
            opcionValida = false;
