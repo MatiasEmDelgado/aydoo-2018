@@ -2,18 +2,21 @@ package ar.edu.untref.aydoo;
 
 public class Vaso {
     private int cantidadDeAzucar = 0;
-    private Contenido contenido = new Vacio();
+    private boolean contieneCafe = false;
+    private boolean contieneTe = false;
 
     public Object getCantidadDeAzucar() {
+        // TODO Auto-generated method stub
         return this.cantidadDeAzucar;
     }
 
     public boolean tieneCafe() {
-        if (this.contenido instanceof Cafe) return true;
-        else return false;
+        // TODO Auto-generated method stub
+        return this.contieneCafe;
     }
 
     public boolean tieneAzucar() {
+        // TODO Auto-generated method stub
         if(this.cantidadDeAzucar>0){
             return true;
         } else {
@@ -22,8 +25,8 @@ public class Vaso {
     }
 
     public boolean tieneTe() {
-        if (this.contenido instanceof Te) return true;
-        else return false;
+        // TODO Auto-generated method stub
+        return this.contieneTe;
     }
 
     public void setAzucar(int cantidadAzucar) {
@@ -31,11 +34,12 @@ public class Vaso {
     }
 
     public void setCafe() {
-        this.contenido  = new Cafe();
+        this.contieneCafe  = true;
 
     }
 
     public void setTe() {
-        this.contenido = new Te();
+        // TODO Auto-generated method stub
+        this.contieneTe   = true;
     }
 }

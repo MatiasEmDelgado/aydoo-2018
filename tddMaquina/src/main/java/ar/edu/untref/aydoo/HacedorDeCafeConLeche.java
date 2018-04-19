@@ -7,5 +7,6 @@ public class HacedorDeCafeConLeche {
 
     public void prepararEnVaso(Vaso unVaso) {
         cafetero.setCafe(unVaso);
+        lechero.ponerLecheUnVaso(unVaso);
     }
 }

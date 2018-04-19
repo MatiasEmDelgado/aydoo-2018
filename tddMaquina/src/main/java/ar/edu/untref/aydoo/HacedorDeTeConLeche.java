@@ -8,5 +8,6 @@ public class HacedorDeTeConLeche {
 
     public void prepararEnVaso(Vaso unVaso) {
         tetero.setTe(unVaso);
+        lechero.ponerLecheUnVaso(unVaso);
     }
 }
