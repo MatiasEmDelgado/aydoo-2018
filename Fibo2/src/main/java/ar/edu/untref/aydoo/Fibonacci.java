@@ -38,11 +38,8 @@ public final class Fibonacci {
             } else {
                 mayorMenor(numero, orientacion);
             }
-            if (orientacion == 'h') {
-                System.out.println("");
-            }
         } else {
-            System.out.println("Opciones no validas.");
+            System.out.print("Opciones no validas.");
         }
     }
 
@@ -56,17 +53,25 @@ public final class Fibonacci {
 
     public static void menorMayor(final int entrada, final char orientacion) {
             Integer resultado;
+            boolean ultimaImpresion = false;
             for (int i = 0; i < entrada; i++) {
                 resultado = getFibonacci(i);
-                imprimir(resultado, orientacion);
+                if(i == entrada-1){
+                    ultimaImpresion = true;
+                }
+                imprimir(resultado, orientacion, ultimaImpresion);
             }
         }
 
     public static void mayorMenor(final int entrada, final char orientacion) {
             Integer resultado;
+            boolean ultimaImpresion = false;
             for (int i = entrada - 1; i >= 0; i--) {
                 resultado = getFibonacci(i);
-                imprimir(resultado, orientacion);
+                if(i == 0){
+                    ultimaImpresion = true;
+                }
+                imprimir(resultado, orientacion, ultimaImpresion);
             }
         }
     private static int getFibonacci(final int numero) {
@@ -83,11 +88,19 @@ public final class Fibonacci {
         }
     }
 
-    private static void imprimir(final Integer nro, final char orientacion) {
+    private static void imprimir(final Integer nro, final char orientacion, final boolean ultimaImpresion) {
         if (orientacion == 'h') {
-            System.out.print(nro.toString() + " ");
+            if (!ultimaImpresion) {
+                System.out.print(nro.toString() + " ");
+            } else {
+                System.out.print(nro.toString() + " ");
+            }
         } else {
-            System.out.println(nro.toString());
+            if (!ultimaImpresion) {
+                System.out.println(nro.toString());
+            } else {
+                System.out.print(nro.toString());
+            }
         }
     }
 }
