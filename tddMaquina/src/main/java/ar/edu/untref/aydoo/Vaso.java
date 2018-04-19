@@ -2,21 +2,22 @@ package ar.edu.untref.aydoo;
 
 public class Vaso {
     private int cantidadDeAzucar = 0;
-    private boolean contieneCafe = false;
-    private boolean contieneTe = false;
+    private Contenido contenido = Contenido.VACIO;
 
-    public Object getCantidadDeAzucar() {
-        // TODO Auto-generated method stub
+    public int getCantidadDeAzucar() {
         return this.cantidadDeAzucar;
     }
 
     public boolean tieneCafe() {
-        // TODO Auto-generated method stub
-        return this.contieneCafe;
+        if (this.contenido == Contenido.CAFE
+                || this.contenido == Contenido.CAFE_CON_LECHE) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public boolean tieneAzucar() {
-        // TODO Auto-generated method stub
         if(this.cantidadDeAzucar>0){
             return true;
         } else {
@@ -25,8 +26,12 @@ public class Vaso {
     }
 
     public boolean tieneTe() {
-        // TODO Auto-generated method stub
-        return this.contieneTe;
+        if (this.contenido == Contenido.TE
+                || this.contenido == Contenido.TE_CON_LECHE) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void setAzucar(int cantidadAzucar) {
@@ -34,12 +39,20 @@ public class Vaso {
     }
 
     public void setCafe() {
-        this.contieneCafe  = true;
-
+        this.contenido  = Contenido.CAFE;
     }
 
     public void setTe() {
-        // TODO Auto-generated method stub
-        this.contieneTe   = true;
+        this.contenido = Contenido.TE;
+    }
+
+    public void setLeche() {
+        if (this.contenido == Contenido.CAFE){
+            this.contenido = Contenido.CAFE_CON_LECHE;
+        } else if (this.contenido == Contenido.TE){
+            this.contenido = Contenido.TE_CON_LECHE;
+        } else {
+            this.contenido = Contenido.LECHE;
+        }
     }
 }
