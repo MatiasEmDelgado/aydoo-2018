@@ -1,7 +1,7 @@
 package ar.edu.untref.aydoo;
 
 public class Tetero {
-    public void setTe(Vaso unVaso) {
+    public void setTe( final Vaso unVaso) {
         unVaso.setTe();
     }
 }

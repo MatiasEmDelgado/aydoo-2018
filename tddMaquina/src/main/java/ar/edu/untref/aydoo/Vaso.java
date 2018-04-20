@@ -9,32 +9,20 @@ public class Vaso {
     }
 
     public boolean tieneCafe() {
-        if (this.contenido == Contenido.CAFE
-                || this.contenido == Contenido.CAFE_CON_LECHE) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.contenido == Contenido.CAFE
+                || this.contenido == Contenido.CAFE_CON_LECHE ? true : false;
     }
 
     public boolean tieneAzucar() {
-        if(this.cantidadDeAzucar>0){
-            return true;
-        } else {
-            return false;
-        }
+        return this.cantidadDeAzucar > 0 ? true : false;
     }
 
     public boolean tieneTe() {
-        if (this.contenido == Contenido.TE
-                || this.contenido == Contenido.TE_CON_LECHE) {
-            return true;
-        } else {
-            return false;
-        }
+        return this.contenido == Contenido.TE
+                || this.contenido == Contenido.TE_CON_LECHE ? true : false;
     }
 
-    public void setAzucar(int cantidadAzucar) {
+    public void setAzucar(final int cantidadAzucar) {
         this.cantidadDeAzucar = cantidadAzucar;
     }
 
