@@ -10,16 +10,16 @@ public class Vaso {
 
     public boolean tieneCafe() {
         return this.contenido == Contenido.CAFE
-                || this.contenido == Contenido.CAFE_CON_LECHE ? true : false;
+                || this.contenido == Contenido.CAFE_CON_LECHE;
     }
 
     public boolean tieneAzucar() {
         return this.cantidadDeAzucar > 0 ? true : false;
     }
 
-    public boolean tieneTe() {
+    public boolean tieneTe(){
         return this.contenido == Contenido.TE
-                || this.contenido == Contenido.TE_CON_LECHE ? true : false;
+                || this.contenido == Contenido.TE_CON_LECHE;
     }
 
     public void setAzucar(final int cantidadAzucar) {
@@ -30,14 +30,14 @@ public class Vaso {
         this.contenido  = Contenido.CAFE;
     }
 
-    public void setTe() {
+    public void setTe(){
         this.contenido = Contenido.TE;
     }
 
     public void setLeche() {
         if (this.contenido == Contenido.CAFE){
             this.contenido = Contenido.CAFE_CON_LECHE;
-        } else if (this.contenido == Contenido.TE){
+        } else if(this.contenido == Contenido.TE){
             this.contenido = Contenido.TE_CON_LECHE;
         } else {
             this.contenido = Contenido.LECHE;
