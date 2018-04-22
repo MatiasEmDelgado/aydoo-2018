@@ -17,7 +17,7 @@ public class LibreriaTest {
 
     }
 
-    @Ignore
+    @Test
     public void clienteCompraUnProductoDeValor10(){
         Libreria libreria = new Libreria();
         Cliente miCliente = new Cliente();
