@@ -6,6 +6,11 @@ public class Compra {
 
     private ArrayList<Libro> librosDeLaCompra = new ArrayList<Libro>();
     private int montoTotalDeLaCompra = 0;
+    private int mesDeLaCompra;
+
+    public Compra(int mes) {
+        mesDeLaCompra = mes;
+    }
 
     public int getMontoTotalDeLaCompra() {
         for (Libro libro: librosDeLaCompra) {

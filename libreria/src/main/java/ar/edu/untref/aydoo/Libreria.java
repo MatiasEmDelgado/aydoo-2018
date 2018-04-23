@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Libreria {
 
-    public int calcularMontoDelMes(Cliente miCliente) {
-        ArrayList<Compra> compasDelCliente = miCliente.getCuentaDelCliente().getComprasDelCliente();
-        if(compasDelCliente.size() > 0) {
+    public int calcularMontoDelMes(Cliente miCliente, int mes) {
+        ArrayList<Compra> compasDelCliente = miCliente.getCuentaDelCliente().getComprasDelCliente(mes);
+        if(compasDelCliente != null) {
             int montoTotalDelMes = 0;
             for (Compra compra:compasDelCliente) {
                 montoTotalDelMes = montoTotalDelMes + compra.getMontoTotalDeLaCompra();
@@ -15,6 +15,5 @@ public class Libreria {
         } else {
             return 0;
         }
-
     }
 }

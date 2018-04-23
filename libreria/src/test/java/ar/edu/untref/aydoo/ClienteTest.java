@@ -14,8 +14,8 @@ public class ClienteTest {
         Libro principito = new Libro(10);
         ArrayList<Libro> librosDeLaCompra = new ArrayList<Libro>();
         librosDeLaCompra.add(principito);
-        miCliente.comprar(librosDeLaCompra);
-        Assert.assertEquals(10,miCliente.getCuentaDelCliente().getComprasDelCliente().get(0).getMontoTotalDeLaCompra());
+        miCliente.comprar(librosDeLaCompra, 1);
+        Assert.assertEquals(10,miCliente.getCuentaDelCliente().getComprasDelCliente(1).get(0).getMontoTotalDeLaCompra());
 
     }
 
@@ -26,8 +26,8 @@ public class ClienteTest {
         Libro principito = new Libro(10);
         ArrayList<Libro> librosDeLaCompra = new ArrayList<Libro>();
         librosDeLaCompra.add(principito);
-        miCliente.comprar(librosDeLaCompra);
-        miCliente.getCuentaDelCliente().descontarMontoDeCompraDelMes();
+        miCliente.comprar(librosDeLaCompra, 1);
+        miCliente.getCuentaDelCliente().descontarMontoDeCompraDelMes(1);
         Assert.assertEquals(90, miCliente.getCuentaDelCliente().getSaldo());
     }
 }
