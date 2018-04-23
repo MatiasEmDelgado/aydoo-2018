@@ -33,6 +33,5 @@ public class LibreriaTest {
         miCliente.comprar(principito);
         miCliente.comprar(bambi);
         Assert.assertEquals(20,libreria.calcularMontoDelMes(miCliente));
-
     }
 }

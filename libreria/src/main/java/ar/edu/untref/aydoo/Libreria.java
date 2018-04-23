@@ -1,11 +1,14 @@
 package ar.edu.untref.aydoo;
 
+import java.util.ArrayList;
+
 public class Libreria {
 
     public int calcularMontoDelMes(Cliente miCliente) {
-        if(miCliente.getComprasDelCliente().size() > 0) {
+        ArrayList<Compra> compasDelCliente = miCliente.getCuentaDelCliente().getComprasDelCliente();
+        if(compasDelCliente.size() > 0) {
             int montoTotalDelMes = 0;
-            for (Compra compra:miCliente.getComprasDelCliente()) {
+            for (Compra compra:compasDelCliente) {
                 montoTotalDelMes = montoTotalDelMes + compra.getMontoTotalDeLaCompra();
             }
             return montoTotalDelMes;

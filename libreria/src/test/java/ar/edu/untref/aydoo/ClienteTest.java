@@ -11,7 +11,7 @@ public class ClienteTest {
         Cliente miCliente = new Cliente();
         Libro principito = new Libro(10);
         miCliente.comprar(principito);
-        Assert.assertEquals(10,miCliente.getComprasDelCliente().get(0).getMontoTotalDeLaCompra());
+        Assert.assertEquals(10,miCliente.getCuentaDelCliente().getComprasDelCliente().get(0).getMontoTotalDeLaCompra());
 
     }
 }

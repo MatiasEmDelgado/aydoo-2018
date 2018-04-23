@@ -4,16 +4,17 @@ import java.util.ArrayList;
 
 public class Cliente {
 
-    private ArrayList<Compra> comprasDelCliente = new ArrayList<Compra>();
+    private CuentaCorriente cuentaDelCliente = new CuentaCorriente();
 
     public void comprar(Libro unLibro) {
         Compra compraDelCliente = new Compra();
         compraDelCliente.agregarLibroAlaCompra(unLibro);
-        comprasDelCliente.add(compraDelCliente);
+        cuentaDelCliente.getComprasDelCliente().add(compraDelCliente);
 
     }
 
-    public ArrayList<Compra> getComprasDelCliente() {
-        return comprasDelCliente;
+    public CuentaCorriente getCuentaDelCliente() {
+        return cuentaDelCliente;
     }
+
 }
