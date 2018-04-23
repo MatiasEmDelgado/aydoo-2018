@@ -10,11 +10,12 @@ public class Cliente {
         cuentaDelCliente = new CuentaCorriente(saldoDeLaCuenta);
     }
 
-    public void comprar(Libro unLibro) {
+    public void comprar(ArrayList<Libro> libros) {
         Compra compraDelCliente = new Compra();
-        compraDelCliente.agregarLibroAlaCompra(unLibro);
+        for (Libro libro : libros) {
+            compraDelCliente.agregarLibroAlaCompra(libro);
+        }
         cuentaDelCliente.getComprasDelCliente().add(compraDelCliente);
-
     }
 
     public CuentaCorriente getCuentaDelCliente() {
