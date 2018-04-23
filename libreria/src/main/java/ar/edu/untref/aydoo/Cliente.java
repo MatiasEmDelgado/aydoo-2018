@@ -4,7 +4,11 @@ import java.util.ArrayList;
 
 public class Cliente {
 
-    private CuentaCorriente cuentaDelCliente = new CuentaCorriente();
+    private CuentaCorriente cuentaDelCliente;
+
+    public Cliente(int saldoDeLaCuenta) {
+        cuentaDelCliente = new CuentaCorriente(saldoDeLaCuenta);
+    }
 
     public void comprar(Libro unLibro) {
         Compra compraDelCliente = new Compra();

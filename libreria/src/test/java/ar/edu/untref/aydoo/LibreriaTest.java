@@ -9,7 +9,7 @@ public class LibreriaTest {
     @Test
     public void calcularMontoDelMesSinNingunaCompra() {
         Libreria libreria = new Libreria();
-        Cliente miCliente = new Cliente();
+        Cliente miCliente = new Cliente(100);
         Assert.assertEquals(0,libreria.calcularMontoDelMes(miCliente));
 
     }
@@ -17,7 +17,7 @@ public class LibreriaTest {
     @Test
     public void clienteCompraUnProductoDeValor10() {
         Libreria libreria = new Libreria();
-        Cliente miCliente = new Cliente();
+        Cliente miCliente = new Cliente(100);
         Libro principito = new Libro(10);
         miCliente.comprar(principito);
         Assert.assertEquals(10,libreria.calcularMontoDelMes(miCliente));
@@ -27,7 +27,7 @@ public class LibreriaTest {
     @Test
     public void clienteCompraDosProductosDeValor10() {
         Libreria libreria = new Libreria();
-        Cliente miCliente = new Cliente();
+        Cliente miCliente = new Cliente(100);
         Libro principito = new Libro(10);
         Libro bambi = new Libro(10);
         miCliente.comprar(principito);
