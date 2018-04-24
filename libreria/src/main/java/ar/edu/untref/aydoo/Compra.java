@@ -4,22 +4,22 @@ import java.util.ArrayList;
 
 public class Compra {
 
-    private ArrayList<Libro> librosDeLaCompra = new ArrayList<Libro>();
-    private int montoTotalDeLaCompra = 0;
-    private int mesDeLaCompra;
+    private ArrayList<Producto> productosDeLaCompra = new ArrayList<Producto>();
+    private double montoTotalDeLaCompra = 0;
+    private double mesDeLaCompra;
 
     public Compra(int mes) {
         mesDeLaCompra = mes;
     }
 
-    public int getMontoTotalDeLaCompra() {
-        for (Libro libro: librosDeLaCompra) {
-            montoTotalDeLaCompra = montoTotalDeLaCompra + libro.getPrecio();
+    public double getMontoTotalDeLaCompra() {
+        for (Producto producto: productosDeLaCompra) {
+            montoTotalDeLaCompra = montoTotalDeLaCompra + producto.getPrecio();
         }
         return montoTotalDeLaCompra;
     }
 
-    public void agregarLibroAlaCompra(Libro unLibro) {
-        librosDeLaCompra.add(unLibro);
+    public void agregarProductoAlaCompra(Producto producto) {
+        productosDeLaCompra.add(producto);
     }
 }

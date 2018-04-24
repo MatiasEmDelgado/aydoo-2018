@@ -6,14 +6,14 @@ import java.util.Map;
 
 public class CuentaCorriente {
 
-    private int saldo;
+    private double saldo;
     private Map<Integer, ArrayList<Compra>> comprasDelClienteEnCadaMes = new HashMap<Integer, ArrayList<Compra>>();
 
-    public CuentaCorriente(int saldoDeLaCuenta) {
+    public CuentaCorriente(double saldoDeLaCuenta) {
         saldo = saldoDeLaCuenta;
     }
 
-    public void setSaldo(int nuevoSaldo) {
+    public void setSaldo(double nuevoSaldo) {
         this.saldo = nuevoSaldo;
     }
 
@@ -21,12 +21,12 @@ public class CuentaCorriente {
         return comprasDelClienteEnCadaMes.get(mes);
     }
 
-    public int getSaldo() {
+    public double getSaldo() {
         return saldo;
     }
 
     public void descontarMontoDeCompraDelMes(int mes) {
-        int montoADescontar = 0;
+        double montoADescontar = 0;
         for (Compra compra : comprasDelClienteEnCadaMes.get(mes)) {
             montoADescontar = montoADescontar + compra.getMontoTotalDeLaCompra();
         }
