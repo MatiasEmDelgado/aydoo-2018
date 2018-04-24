@@ -108,4 +108,18 @@ public class LibreriaTest {
         Assert.assertEquals(190,libreria.calcularMontoDelMes(miCliente,1),1);
     }
 
+    @Test
+    public void clienteCompraUnArticuloYUnLibroYAdquiereSuscripcionEnMarzo() {
+        Libreria libreria = new Libreria();
+        Cliente miCliente = new Cliente(100);
+        Articulo calculadoraPro = new Articulo(413.25);
+        Libro dracula = new Libro(30);
+        Suscripcion revistaHola = new Suscripcion(200,4);
+        ArrayList<Producto> productosDeLaCompra = new ArrayList<Producto>();
+        productosDeLaCompra.add(calculadoraPro);
+        productosDeLaCompra.add(dracula);
+        productosDeLaCompra.add(revistaHola);
+        miCliente.comprar(productosDeLaCompra, 3);
+        Assert.assertEquals(693.5,libreria.calcularMontoDelMes(miCliente,3),1);
+    }
 }
