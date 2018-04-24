@@ -11,7 +11,7 @@ public class Libreria {
             for (Compra compra:compasDelCliente) {
                 montoTotalDelMes = montoTotalDelMes + compra.getMontoTotalDeLaCompra();
             }
-            return montoTotalDelMes;
+            return montoTotalDelMes - montoTotalDelMes *  0.05;
         } else {
             return 0;
         }

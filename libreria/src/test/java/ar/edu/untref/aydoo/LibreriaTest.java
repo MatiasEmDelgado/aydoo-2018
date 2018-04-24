@@ -23,7 +23,7 @@ public class LibreriaTest {
         ArrayList<Producto> librosDeLaCompra = new ArrayList<Producto>();
         librosDeLaCompra.add(principito);
         miCliente.comprar(librosDeLaCompra, 1);
-        Assert.assertEquals(10,libreria.calcularMontoDelMes(miCliente, 1),0);
+        Assert.assertEquals(9.5,libreria.calcularMontoDelMes(miCliente, 1),0);
 
     }
 
@@ -39,7 +39,7 @@ public class LibreriaTest {
         ArrayList<Producto> librosDeLaCompra2 = new ArrayList<Producto>();
         librosDeLaCompra2.add(bambi);
         miCliente.comprar(librosDeLaCompra2, 1);
-        Assert.assertEquals(20,libreria.calcularMontoDelMes(miCliente, 1),0);
+        Assert.assertEquals(19.0,libreria.calcularMontoDelMes(miCliente, 1),0);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class LibreriaTest {
         librosDeLaCompra.add(principito);
         librosDeLaCompra.add(bambi);
         miCliente.comprar(librosDeLaCompra, 1);
-        Assert.assertEquals(20,libreria.calcularMontoDelMes(miCliente, 1),0);
+        Assert.assertEquals(19,libreria.calcularMontoDelMes(miCliente, 1),0);
     }
 
     @Test
@@ -69,8 +69,8 @@ public class LibreriaTest {
         librosDeLaCompraDeFebrero.add(dracula);
         miCliente.comprar(librosDeLaCompraDeEnero, 1);
         miCliente.comprar(librosDeLaCompraDeFebrero, 2);
-        Assert.assertEquals(20,libreria.calcularMontoDelMes(miCliente,1),0);
-        Assert.assertEquals(30,libreria.calcularMontoDelMes(miCliente,2),0);
+        Assert.assertEquals(19,libreria.calcularMontoDelMes(miCliente,1),0);
+        Assert.assertEquals(28.5,libreria.calcularMontoDelMes(miCliente,2),0);
     }
 
     @Test
@@ -81,7 +81,7 @@ public class LibreriaTest {
         ArrayList<Producto> articulosDeLaCompra = new ArrayList<Producto>();
         articulosDeLaCompra.add(calculadoraPro);
         miCliente.comprar(articulosDeLaCompra, 1);
-        Assert.assertEquals(500,libreria.calcularMontoDelMes(miCliente,1),1);
+        Assert.assertEquals(475.03,libreria.calcularMontoDelMes(miCliente,1),1);
     }
 
     @Test
@@ -94,6 +94,8 @@ public class LibreriaTest {
         productosDeLaCompra.add(calculadoraPro);
         productosDeLaCompra.add(dracula);
         miCliente.comprar(productosDeLaCompra, 1);
-        Assert.assertEquals(530,libreria.calcularMontoDelMes(miCliente,1),1);
+        Assert.assertEquals(503.53,libreria.calcularMontoDelMes(miCliente,1),1);
     }
+
+
 }
