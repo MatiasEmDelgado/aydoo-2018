@@ -40,6 +40,5 @@ public class CuentaCorriente {
             comprasDelClienteEnCadaMes.put(mes,new ArrayList<Compra>());
             comprasDelClienteEnCadaMes.get(mes).add(compra);
         }
-
     }
 }
