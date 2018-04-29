@@ -69,8 +69,7 @@ public class PruebaTablero {
     public void disparoACruceroVerticalDosvecesYDevuelveHundido() throws BatallaNavalExcepcion {
         Tablero tablero = new Tablero(20, 20);
         Crucero unCrucero = new Crucero();
-        Direccion direccionVertical = new Vertical();
-        unCrucero.setDireccionDelCrucero(direccionVertical);
+        unCrucero.setDireccionDelCrucero(Direccion.VERTICAL);
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         ResultadoDeDisparo resultadoDeDisparo = tablero.recibirDisparo(new Posicion(1, 1));
         resultadoDeDisparo = tablero.recibirDisparo(new Posicion(2, 1));
@@ -81,8 +80,7 @@ public class PruebaTablero {
     public void ubicoBoteEncimaDeUnCruceroYDeberiaDevolverError() throws BatallaNavalExcepcion {
         Tablero tablero = new Tablero(20, 20);
         Crucero unCrucero = new Crucero();
-        Direccion direccionVertical = new Vertical();
-        unCrucero.setDireccionDelCrucero(direccionVertical);
+        unCrucero.setDireccionDelCrucero(Direccion.VERTICAL);
         Bote unBote = new Bote();
         tablero.ubicarBarco(unCrucero, new Posicion(1, 1));
         tablero.ubicarBarco(unBote, new Posicion(1, 1));

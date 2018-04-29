@@ -10,8 +10,8 @@ public class Bote extends Barco {
 
     public boolean estaEn(final Posicion unaPosicion) {
         return unaPosicion.obtenerFila() == posicionDelBote.obtenerFila()
-         &&
-         unaPosicion.obtenerColumna() == posicionDelBote.obtenerColumna();
+                &&
+                unaPosicion.obtenerColumna() == posicionDelBote.obtenerColumna();
     }
 
     public ResultadoDeDisparo recibirDisparo() {
@@ -20,3 +20,4 @@ public class Bote extends Barco {
     }
 
 }
+

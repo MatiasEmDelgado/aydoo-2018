@@ -1,7 +1,6 @@
 package ar.edu.untref.aydoo;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class Tablero {
 
@@ -43,10 +42,10 @@ public class Tablero {
                 unBarco.setPosicion(posicion);
                 listaDeBarcos.add(unBarco);
             } else {
-                throw new BarcoEncimadoExcepcion();
+                throw new BarcoEncimadoExcepcion("Un barco no puede estar parcial ni totalmente encima de otro");
             }
         } else {
-            throw new BarcoFueraDelTableroExcepcion();
+            throw new BarcoFueraDelTableroExcepcion("Los barcos deben ubicarse dentro de los limites del tablero");
         }
     }
 
