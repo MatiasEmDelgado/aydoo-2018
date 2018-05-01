@@ -4,11 +4,13 @@ public class Candidato {
 
     private Integer idCandidato;
     private Partido partidoCandidato;
+    private Provincia provinciaCandidato;
     private int cantidadDeVotos = 0;
 
-    public Candidato(int id, Partido partido, Provincia laRioja) {
+    public Candidato(int id, Partido partido, Provincia provincia) {
         idCandidato = id;
         partidoCandidato = partido;
+        provinciaCandidato = provincia;
     }
 
     public Integer getIdCandidato() {
@@ -25,5 +27,9 @@ public class Candidato {
 
     public void contarVoto() {
         cantidadDeVotos++;
+    }
+
+    public Provincia getProvincia() {
+        return provinciaCandidato;
     }
 }

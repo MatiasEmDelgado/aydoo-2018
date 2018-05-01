@@ -20,4 +20,25 @@ public class Partido {
         }
         return candidatoARetornar;
     }
+
+    public Candidato getCandidatoGanadorDelPartido(Provincia provincia) {
+        Candidato candidatoGanador = candidatos.get(0);
+        ArrayList<Candidato> candidatosDeLaProvincia = getCandidatos(provincia);
+        for (Candidato candidato : candidatos) {
+            if(candidato.getCantidadDeVotos() > candidatoGanador.getCantidadDeVotos()){
+                candidatoGanador = candidato;
+            }
+        }
+        return candidatoGanador;
+    }
+
+    private ArrayList<Candidato> getCandidatos(Provincia provincia) {
+        ArrayList<Candidato> candidatosDeLaProvincia = new ArrayList<Candidato>();
+        for (Candidato candidato : candidatos) {
+            if(candidato.getProvincia().getNombre() == provincia.getNombre()) {
+                candidatosDeLaProvincia.add(candidato);
+            }
+        }
+        return  candidatosDeLaProvincia;
+    }
 }
