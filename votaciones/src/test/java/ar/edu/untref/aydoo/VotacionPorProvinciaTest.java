@@ -10,13 +10,15 @@ public class VotacionPorProvinciaTest {
     public void candidatoConMasVotosEnLaRioja() {
         CamaraElectoral camaraElectoral = new CamaraElectoral();
 
-        Votante votanteSocialista = new Votante();
-        Votante votanteComunista = new Votante();
-        Votante votanteRadicalista = new Votante();
-        Votante otroVotanteSocialista = new Votante();
-
         Provincia laRioja = new Provincia("La Rioja");
         Provincia laPampa = new Provincia("La Pampa");
+
+        Votante votanteSocialista = new Votante(laRioja);
+        Votante votanteComunista = new Votante(laPampa);
+        Votante votanteRadicalista = new Votante(laRioja);
+        Votante otroVotanteSocialista = new Votante(laRioja);
+
+
         Partido socialista = new Partido();
         Partido comunista = new Partido();
         Partido radicalista = new Partido();

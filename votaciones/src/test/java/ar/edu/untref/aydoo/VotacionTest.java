@@ -8,8 +8,8 @@ public class VotacionTest
 {
     @Test
     public void unVotanteNoVotaUnCandidatoLaCantidadDeVotosDelCandidatoEsCero() {
-        Votante unVotante = new Votante();
         Provincia provincia = new Provincia("Sin provincia");
+        Votante unVotante = new Votante(provincia);
         Partido unPartido = new Partido();
         Candidato unCandidato = new Candidato(1, unPartido, provincia);
         unPartido.setCandidato(unCandidato);
@@ -17,10 +17,9 @@ public class VotacionTest
     }
 
     @Test
-    public void unVotanteVotaUnCandidatoLaCantidadDeVotosDelCandidatoEsUno()
-    {
-        Votante unVotante = new Votante();
+    public void unVotanteVotaUnCandidatoLaCantidadDeVotosDelCandidatoEsUno() {
         Provincia provincia = new Provincia("Sin provincia");
+        Votante unVotante = new Votante(provincia);
         Partido unPartido = new Partido();
         Candidato unCandidato = new Candidato(1, unPartido, provincia);
         unPartido.setCandidato(unCandidato);
@@ -29,10 +28,9 @@ public class VotacionTest
     }
 
     @Test
-    public void unVotanteVotaUnCandidatoEnLaRiojaLaCantidadDeVotosDelCandidatoEsUno()
-    {
-        Votante unVotante = new Votante();
+    public void unVotanteVotaUnCandidatoEnLaRiojaLaCantidadDeVotosDelCandidatoEsUno() {
         Provincia laRioja = new Provincia("La Rioja");
+        Votante unVotante = new Votante(laRioja);
         Partido unPartido = new Partido();
         Candidato unCandidato = new Candidato(1, unPartido, laRioja);
         unPartido.setCandidato(unCandidato);

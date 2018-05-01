@@ -6,11 +6,11 @@ import org.junit.Test;
 public class PartidoTest {
     @Test
     public void candidatoGanadorDelPartidoEnLaRioja() {
-        Votante votanteUno = new Votante();
-        Votante votanteDos = new Votante();
-        Votante votanteTres = new Votante();
-        Votante votanteCuatro = new Votante();
         Provincia laRioja = new Provincia("La Rioja");
+        Votante votanteUno = new Votante(laRioja);
+        Votante votanteDos = new Votante(laRioja);
+        Votante votanteTres = new Votante(laRioja);
+        Votante votanteCuatro = new Votante(laRioja);
         Partido socialista = new Partido();
         Candidato unCandidatoDeLaRioja = new Candidato(1, socialista, laRioja);
         Candidato otroCandidatoDeLaRioja = new Candidato(2, socialista, laRioja);
