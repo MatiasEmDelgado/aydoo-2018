@@ -41,4 +41,8 @@ public class Partido {
         }
         return  candidatosDeLaProvincia;
     }
+
+    public List<Candidato> getCandidatos() {
+        return candidatos;
+    }
 }

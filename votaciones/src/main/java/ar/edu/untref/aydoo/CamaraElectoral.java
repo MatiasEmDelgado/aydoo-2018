@@ -8,10 +8,14 @@ public class CamaraElectoral {
     private List<Partido> partidos = new ArrayList<Partido>();
 
     public Candidato getCandidatoGanadorProvincial(Provincia provincia) {
-        for (Partido partido : partidos) {
+        Candidato candidatoGanador = partidos.get(0).getCandidatos().get(0);
+        for(Partido partido : partidos) {
            Candidato candidato = partido.getCandidatoGanadorDelPartido(provincia);
+           if(candidato.getCantidadDeVotos() > candidatoGanador.getCantidadDeVotos()) {
+               candidatoGanador = candidato;
+           }
         }
-        return null;
+        return candidatoGanador;
     }
 
     public void agregarPartido(Partido partido) {
