@@ -6,7 +6,7 @@ public class Candidato {
     private Partido partidoCandidato;
     private int cantidadDeVotos = 0;
 
-    public Candidato(int id, Partido partido) {
+    public Candidato(int id, Partido partido, Provincia laRioja) {
         idCandidato = id;
         partidoCandidato = partido;
     }
