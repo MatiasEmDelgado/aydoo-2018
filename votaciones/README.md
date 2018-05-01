@@ -1,4 +1,4 @@
-Ejercicio 0
+Ejercicio 7
 ===========
 
 Estructura inicial para el Ejercicio 7 de votaciones.
