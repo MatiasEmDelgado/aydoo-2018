@@ -22,4 +22,8 @@ public class Candidato {
     public int getCantidadDeVotos() {
         return cantidadDeVotos;
     }
+
+    public void contarVoto() {
+        cantidadDeVotos++;
+    }
 }

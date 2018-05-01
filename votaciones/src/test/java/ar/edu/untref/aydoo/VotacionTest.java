@@ -14,4 +14,15 @@ public class VotacionTest
         unPartido.setCandidato(unCandidato);
         Assert.assertEquals(0, unPartido.getCandidato(unCandidato).getCantidadDeVotos());
     }
+
+    @Test
+    public void unVotanteVotaUnCandidatoLaCantidadDeVotosDelCandidatoEsUno()
+    {
+        Votante unVotante = new Votante();
+        Partido unPartido = new Partido();
+        Candidato unCandidato = new Candidato(1, unPartido);
+        unPartido.setCandidato(unCandidato);
+        unVotante.votar(unPartido.getCandidato(unCandidato));
+        Assert.assertEquals(1, unPartido.getCandidato(unCandidato).getCantidadDeVotos());
+    }
 }
