@@ -37,4 +37,16 @@ public class VotacionTest
         unVotante.votar(unPartido.getCandidato(unCandidato));
         Assert.assertEquals(1, unPartido.getCandidato(unCandidato).getCantidadDeVotos());
     }
+
+    @Test
+    public void unVotanteVotaDosVecesAUnCandidatoEnLaRiojaLaCantidadDeVotosDelCandidatoEsUno() {
+        Provincia laRioja = new Provincia("La Rioja");
+        Votante unVotante = new Votante(laRioja);
+        Partido unPartido = new Partido();
+        Candidato unCandidato = new Candidato(1, unPartido, laRioja);
+        unPartido.setCandidato(unCandidato);
+        unVotante.votar(unPartido.getCandidato(unCandidato));
+        unVotante.votar(unPartido.getCandidato(unCandidato));
+        Assert.assertEquals(1, unPartido.getCandidato(unCandidato).getCantidadDeVotos());
+    }
 }
