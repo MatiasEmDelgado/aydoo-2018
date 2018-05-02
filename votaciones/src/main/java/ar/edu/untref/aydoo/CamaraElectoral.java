@@ -60,4 +60,14 @@ public class CamaraElectoral {
     public void agregarPartido(Partido partido) {
         partidos.add(partido);
     }
+
+    public Partido getPartidoNacionalGanador() {
+        Partido partidoNacionalGanador = new Partido();
+        for (Partido partido : partidos) {
+            if(partido.getCantidadDeVotos() > partidoNacionalGanador.getCantidadDeVotos()) {
+                partidoNacionalGanador = partido;
+            }
+        }
+        return partidoNacionalGanador;
+    }
 }

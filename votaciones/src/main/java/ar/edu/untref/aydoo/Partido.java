@@ -6,7 +6,7 @@ import java.util.List;
 public class Partido {
 
     private List<Candidato> candidatos = new ArrayList<Candidato>();
-
+    private int cantidadDeVotos = 0;
     public void setCandidato(Candidato candidato) {
         candidatos.add(candidato);
     }
@@ -44,5 +44,13 @@ public class Partido {
 
     public List<Candidato> getCandidatos() {
         return candidatos;
+    }
+
+    public void contarVoto() {
+        cantidadDeVotos++;
+    }
+
+    public int getCantidadDeVotos() {
+        return cantidadDeVotos;
     }
 }

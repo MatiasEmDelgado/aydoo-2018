@@ -11,6 +11,7 @@ public class Votante {
     public void votar(Candidato candidato) {
         if(candidato.getProvincia().getNombre() == provinciaVotante.getNombre() && votos == 0){
             candidato.contarVoto();
+            candidato.getPartidoCandidato().contarVoto();
             votos++;
         }
     }
