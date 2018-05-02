@@ -5,13 +5,14 @@ import java.util.HashMap;
 import java.util.List;
 
 public class CamaraElectoral {
+
     private List<Partido> partidos = new ArrayList<Partido>();
 
     private List<Provincia> provinciasDeLaRePublicaArgentina = new ArrayList<Provincia>();
 
     public CamaraElectoral() {
         provinciasDeLaRePublicaArgentina.add(new Provincia("Catamarca"));
-        provinciasDeLaRePublicaArgentina.add(new Provincia("Ciudad Autónoma de Buenos Aires"));
+        provinciasDeLaRePublicaArgentina.add(new Provincia("Ciudad Autonoma de Buenos Aires"));
         provinciasDeLaRePublicaArgentina.add(new Provincia("Cordoba"));
         provinciasDeLaRePublicaArgentina.add(new Provincia("Corrientes"));
         provinciasDeLaRePublicaArgentina.add(new Provincia("Chaco"));
@@ -37,7 +38,7 @@ public class CamaraElectoral {
     }
 
     public Candidato getCandidatoGanadorProvincial(Provincia provincia) {
-        Candidato candidatoGanador = partidos.get(0).getCandidatos().get(0);
+        Candidato candidatoGanador = new Candidato(0, null, provincia);
         for(Partido partido : partidos) {
            Candidato candidato = partido.getCandidatoGanadorDelPartido(provincia);
            if(candidato.getCantidadDeVotos() > candidatoGanador.getCantidadDeVotos()) {
@@ -47,10 +48,11 @@ public class CamaraElectoral {
         return candidatoGanador;
     }
 
-    public HashMap<Provincia, Candidato> getGanadorEnCadaProvincia() {
-        HashMap<Provincia, Candidato> ganadoresPorProvincia = new HashMap<Provincia, Candidato>();
+    public HashMap<String, Candidato> getGanadorEnCadaProvincia() {
+        HashMap<String, Candidato> ganadoresPorProvincia = new HashMap<String, Candidato>();
         for (Provincia provincia : provinciasDeLaRePublicaArgentina) {
-            ganadoresPorProvincia.put(provincia, getCandidatoGanadorProvincial(provincia));
+            Candidato candidato = getCandidatoGanadorProvincial(provincia);
+            ganadoresPorProvincia.put(provincia.getNombre(), getCandidatoGanadorProvincial(provincia));
         }
         return ganadoresPorProvincia;
     }

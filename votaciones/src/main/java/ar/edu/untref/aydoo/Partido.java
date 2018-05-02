@@ -22,9 +22,9 @@ public class Partido {
     }
 
     public Candidato getCandidatoGanadorDelPartido(Provincia provincia) {
-        Candidato candidatoGanador = candidatos.get(0);
+        Candidato candidatoGanador = new Candidato(0, null, provincia);
         ArrayList<Candidato> candidatosDeLaProvincia = getCandidatos(provincia);
-        for (Candidato candidato : candidatos) {
+        for (Candidato candidato : candidatosDeLaProvincia) {
             if(candidato.getCantidadDeVotos() > candidatoGanador.getCantidadDeVotos()){
                 candidatoGanador = candidato;
             }
