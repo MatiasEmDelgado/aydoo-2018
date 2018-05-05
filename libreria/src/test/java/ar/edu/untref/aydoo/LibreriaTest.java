@@ -1,6 +1,5 @@
 package ar.edu.untref.aydoo;
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.Assert;
 
@@ -14,7 +13,7 @@ public class LibreriaTest {
         Assert.assertEquals(0, montoDeCobroEnEneroParaPepe, 1);
     }
 
-    @Ignore
+    @Test
     public void elClienteCompraUnLibroEnElMesDeEneroElMontoAcobrarDeberiaSerElValorDelMismo() {
         Cliente pepe = new Cliente();
         Libro principito = new Libro(50.0);
