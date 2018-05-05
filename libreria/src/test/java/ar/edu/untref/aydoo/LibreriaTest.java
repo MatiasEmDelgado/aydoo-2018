@@ -43,10 +43,10 @@ public class LibreriaTest {
         Mes abril2018 = new Mes(4, 2018);
         List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();
         mesesDeLaSuscripcion.add(abril2018);
-      /**  Producto elGrafico = new Suscripcion(20.0, 2, mesesDeLaSuscripcion);
+        Producto elGrafico = new Suscripcion(20.0, 2, mesesDeLaSuscripcion);
         Libreria libreria = new Libreria ();
         libreria.registrarCompra(elGrafico, pepe, 1);
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
-        Assert.assertEquals(24.2, montoDeCobroEnEneroParaPepe, 1);*/
+        Assert.assertEquals(24.2, montoDeCobroEnEneroParaPepe, 1);
     }
 }
