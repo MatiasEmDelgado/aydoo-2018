@@ -1,5 +1,0 @@
-package ar.edu.untref.aydoo;
-
-public enum MesDelAnio {
-    ENERO,FEBRERO,MARZO,ABRIL,MAYO,JUNIO,JULIO,AGOSTO,SEPTIEMBRE,OCTUBRE,NOVIEMBRE,DICIEMBRE;
-}
