@@ -33,9 +33,10 @@ public class Suscripcion extends Producto {
 
     private boolean suscripcionConDescuento(){
         int contadorMesSuscripto = 0;
+        int anioDeLaSuscripcion = mesesDeLaSuscripcion.get(0).getAnioDelMes();
         for(int i = 1; i < 13; i++){
             for (Mes mes : mesesDeLaSuscripcion) {
-                if(i == mes.getNumeroDelMes()) {
+                if(i == mes.getNumeroDelMes() && anioDeLaSuscripcion == mes.getAnioDelMes()) {
                     contadorMesSuscripto++;
                 }
             }
