@@ -15,4 +15,13 @@ public class CompraTest {
         Assert.assertEquals(principito, libroDeLaCompra);
     }
 
+    @Test
+    public void unaCompraDeberiaDevolverCorrectamenteElQueRealizoLaCompra (){
+        Cliente pepe = new Cliente();
+        Libro principito = new Libro(10.0);
+        Compra compra = new Compra(principito, pepe, 1);
+        Cliente clienteDeLaCompra = compra.getClienteDeLaCompra();
+        Assert.assertEquals(pepe, clienteDeLaCompra);
+    }
+
 }

@@ -15,4 +15,8 @@ public class Compra {
     public Libro getLibroDeLaCompra() {
         return libroDeLaCompra;
     }
+
+    public Cliente getClienteDeLaCompra() {
+        return clienteDeLaCompra;
+    }
 }
