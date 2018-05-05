@@ -13,7 +13,8 @@ public class LibreriaTest {
     public void elClienteNoCompraNadaEnElMesDeEneroElMontoAcobrarDeberiaSer0() {
         Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
         Libreria libreria = new Libreria();
-        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
+        Mes enero2018 = new Mes(1, 2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
         Assert.assertEquals(0, montoDeCobroEnEneroParaPepe, 1);
     }
 
@@ -22,8 +23,9 @@ public class LibreriaTest {
         Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
         Producto principito = new Libro(50.0);
         Libreria libreria = new Libreria ();
-        libreria.registrarCompra(principito, pepe, 1);
-        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
+        Mes enero2018 = new Mes(1, 2018);
+        libreria.registrarCompra(principito, pepe, enero2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
         Assert.assertEquals(50.0, montoDeCobroEnEneroParaPepe, 1);
     }
 
@@ -32,8 +34,9 @@ public class LibreriaTest {
         Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
         Producto lapiz = new Articulo(20.0);
         Libreria libreria = new Libreria ();
-        libreria.registrarCompra(lapiz, pepe, 1);
-        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
+        Mes enero2018 = new Mes(1, 2018);
+        libreria.registrarCompra(lapiz, pepe, enero2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
         Assert.assertEquals(24.2, montoDeCobroEnEneroParaPepe, 1);
     }
 
@@ -45,8 +48,9 @@ public class LibreriaTest {
         mesesDeLaSuscripcion.add(abril2018);
         Producto elGrafico = new Suscripcion(20.0, 2, mesesDeLaSuscripcion);
         Libreria libreria = new Libreria ();
-        libreria.registrarCompra(elGrafico, pepe, 1);
-        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
+        Mes enero2018 = new Mes(1, 2018);
+        libreria.registrarCompra(elGrafico, pepe, enero2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
         Assert.assertEquals(24.2, montoDeCobroEnEneroParaPepe, 1);
     }
 }

@@ -8,13 +8,15 @@ public class Libreria {
     private List<Compra> comprasEnLaLibreria = new ArrayList<Compra>();
 
 
-    public void registrarCompra(Producto producto, Cliente cliente, int mes) {
+    public void registrarCompra(Producto producto, Cliente cliente, Mes mes) {
         comprasEnLaLibreria.add(new Compra(producto, cliente, mes));
     }
-    public Double obtenerMontoDeCobro(int mes, Cliente cliente) {
+    public Double obtenerMontoDeCobro(Mes mes, Cliente cliente) {
         Double montoDeCobro = 0.0;
         for (Compra compra : comprasEnLaLibreria) {
-            if (compra.getClienteDeLaCompra().equals(cliente) && compra.getMesDeLaCompra() == mes){
+            if (compra.getClienteDeLaCompra().equals(cliente) &&
+                    compra.getMesDeLaCompra().getNumeroDelMes() == mes.getNumeroDelMes()
+                    && compra.getMesDeLaCompra().getAnioDelMes() == mes.getAnioDelMes()){
                 montoDeCobro = compra.getProductoDeLaCompra().getPrecio();
             }
         }

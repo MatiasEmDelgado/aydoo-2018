@@ -4,9 +4,9 @@ public class Compra {
 
     private Producto productoDeLaCompra;
     private Cliente clienteDeLaCompra;
-    private int mesDeLaCompra;
+    private Mes mesDeLaCompra;
 
-    public Compra(Producto producto, Cliente cliente, int mes) {
+    public Compra(Producto producto, Cliente cliente, Mes mes) {
         productoDeLaCompra = producto;
         clienteDeLaCompra = cliente;
         mesDeLaCompra = mes;
@@ -20,7 +20,7 @@ public class Compra {
         return clienteDeLaCompra;
     }
 
-    public int getMesDeLaCompra() {
+    public Mes getMesDeLaCompra() {
         return mesDeLaCompra;
     }
 }
