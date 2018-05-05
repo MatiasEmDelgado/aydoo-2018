@@ -1,19 +1,21 @@
 package ar.edu.untref.aydoo;
 
+import java.util.ArrayList;
+
 public class Compra {
 
-    private Producto productoDeLaCompra;
+    private ArrayList<Producto> productosDeLaCompra;
     private Cliente clienteDeLaCompra;
     private Mes mesDeLaCompra;
 
-    public Compra(Producto producto, Cliente cliente, Mes mes) {
-        productoDeLaCompra = producto;
+    public Compra(ArrayList<Producto> productos, Cliente cliente, Mes mes) {
+        productosDeLaCompra = productos;
         clienteDeLaCompra = cliente;
         mesDeLaCompra = mes;
     }
 
-    public Producto getProductoDeLaCompra() {
-        return productoDeLaCompra;
+    public ArrayList<Producto> getProductosDeLaCompra() {
+        return productosDeLaCompra;
     }
 
     public Cliente getClienteDeLaCompra() {

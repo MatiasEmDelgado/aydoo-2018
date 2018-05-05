@@ -1,37 +1,43 @@
 package ar.edu.untref.aydoo;
 
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 public class CompraTest {
 
+    private Cliente pepe;
+    private Producto principito;
+    private ArrayList<Producto> productosDeLaCompraDePepe;
+    private Mes enero;
+    private Compra compra;
 
-    @Test
-    public void unaCompraDeberiaDevolverCorrectamenteElLibroQueSeVendioEnLaCompra (){
-        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
-        Producto principito = new Libro(10.0);
-        Mes enero = new Mes(1,2018);
-        Compra compra = new Compra(principito, pepe, enero);
-        Producto libroDeLaCompra = compra.getProductoDeLaCompra();
-        Assert.assertEquals(principito, libroDeLaCompra);
+    @Before
+    public void inicioUnaCompra() {
+        pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
+        productosDeLaCompraDePepe = new ArrayList<Producto>();
+        principito = new Libro(10.0);
+        productosDeLaCompraDePepe.add(principito);
+        enero = new Mes(1,2018);
+        compra = new Compra(productosDeLaCompraDePepe, pepe, enero);
     }
 
     @Test
-    public void unaCompraDeberiaDevolverCorrectamenteElQueRealizoLaCompra (){
-        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
-        Libro principito = new Libro(10.0);
-        Mes enero = new Mes(1,2018);
-        Compra compra = new Compra(principito, pepe, enero);
+    public void unaCompraDeberiaDevolverCorrectamenteElLibroQueSeVendioEnLaCompra (){
+        ArrayList<Producto> libroDeLaCompra = compra.getProductosDeLaCompra();
+        Assert.assertEquals(productosDeLaCompraDePepe, libroDeLaCompra);
+    }
+
+    @Test
+    public void unaCompraDeberiaDevolverCorrectamenteElClienteQueRealizoLaCompra (){
         Cliente clienteDeLaCompra = compra.getClienteDeLaCompra();
         Assert.assertEquals(pepe, clienteDeLaCompra);
     }
 
     @Test
     public void unaCompraDeberiaDevolverCorrectamenteElMesEnElQueSeRealizoLaCompra (){
-        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
-        Libro principito = new Libro(10.0);
-        Mes enero = new Mes(1,2018);
-        Compra compra = new Compra(principito, pepe, enero);
         int mesDeLaCompra = compra.getMesDeLaCompra().getNumeroDelMes();
         Assert.assertEquals(1, mesDeLaCompra);
     }

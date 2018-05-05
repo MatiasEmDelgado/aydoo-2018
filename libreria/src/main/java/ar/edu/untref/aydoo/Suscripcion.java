@@ -41,12 +41,10 @@ public class Suscripcion extends Producto {
                 }
             }
         }
-
         if(contadorMesSuscripto == 12){
             return true;
         } else {
           return false;
         }
     }
-
 }
