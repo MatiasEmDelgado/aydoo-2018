@@ -2,18 +2,18 @@ package ar.edu.untref.aydoo;
 
 public class Compra {
 
-    private Libro libroDeLaCompra;
+    private Producto productoDeLaCompra;
     private Cliente clienteDeLaCompra;
     private int mesDeLaCompra;
 
-    public Compra(Libro libro, Cliente cliente, int mes) {
-        libroDeLaCompra = libro;
+    public Compra(Producto producto, Cliente cliente, int mes) {
+        productoDeLaCompra = producto;
         clienteDeLaCompra = cliente;
         mesDeLaCompra = mes;
     }
 
-    public Libro getLibroDeLaCompra() {
-        return libroDeLaCompra;
+    public Producto getProductoDeLaCompra() {
+        return productoDeLaCompra;
     }
 
     public Cliente getClienteDeLaCompra() {

@@ -1,14 +1,12 @@
 package ar.edu.untref.aydoo;
 
-public class Libro {
-
-    Double precioDelLibro;
+public class Libro extends Producto {
 
     public Libro(double precio) {
-        precioDelLibro = precio;
+        super(precio);
     }
 
-    public Double getPrecioDelLibro() {
-        return precioDelLibro;
+    public Double getPrecio() {
+        return super.getPrecio();
     }
 }

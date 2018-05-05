@@ -9,9 +9,9 @@ public class CompraTest {
     @Test
     public void unaCompraDeberiaDevolverCorrectamenteElLibroQueSeVendioEnLaCompra (){
         Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
-        Libro principito = new Libro(10.0);
+        Producto principito = new Libro(10.0);
         Compra compra = new Compra(principito, pepe, 1);
-        Libro libroDeLaCompra = compra.getLibroDeLaCompra();
+        Producto libroDeLaCompra = compra.getProductoDeLaCompra();
         Assert.assertEquals(principito, libroDeLaCompra);
     }
 

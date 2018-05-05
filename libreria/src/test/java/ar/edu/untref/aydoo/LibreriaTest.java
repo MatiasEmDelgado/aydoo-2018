@@ -16,10 +16,20 @@ public class LibreriaTest {
     @Test
     public void elClienteCompraUnLibroEnElMesDeEneroElMontoAcobrarDeberiaSerElValorDelMismo() {
         Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
-        Libro principito = new Libro(50.0);
+        Producto principito = new Libro(50.0);
         Libreria libreria = new Libreria ();
         libreria.registrarCompra(principito, pepe, 1);
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
         Assert.assertEquals(50.0, montoDeCobroEnEneroParaPepe, 1);
+    }
+
+    @Test
+    public void elClienteCompraUnLapizEnElMesDeEneroElMontoAcobrarDeberiaSerElValorDelMismoConIva() {
+        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
+        Producto lapiz = new Articulo(20.0);
+        Libreria libreria = new Libreria ();
+        libreria.registrarCompra(lapiz, pepe, 1);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(1, pepe);
+        Assert.assertEquals(24.2, montoDeCobroEnEneroParaPepe, 1);
     }
 }
