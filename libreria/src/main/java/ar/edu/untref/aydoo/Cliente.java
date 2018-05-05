@@ -1,8 +1,8 @@
 package ar.edu.untref.aydoo;
 
-public class Program {
+public class Cliente {
 
-    protected Program() {
+    protected Cliente() {
     }
 
     public static final void main(final String[] arg) {
