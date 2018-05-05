@@ -26,7 +26,7 @@ public class LibreriaTest {
         Mes enero2018 = new Mes(1, 2018);
         libreria.registrarCompra(principito, pepe, enero2018);
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
-        Assert.assertEquals(50.0, montoDeCobroEnEneroParaPepe, 1);
+        Assert.assertEquals(47.5, montoDeCobroEnEneroParaPepe, 1);
     }
 
     @Test
@@ -37,7 +37,7 @@ public class LibreriaTest {
         Mes enero2018 = new Mes(1, 2018);
         libreria.registrarCompra(lapiz, pepe, enero2018);
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
-        Assert.assertEquals(24.2, montoDeCobroEnEneroParaPepe, 1);
+        Assert.assertEquals(22.99, montoDeCobroEnEneroParaPepe, 1);
     }
 
     @Test
@@ -51,7 +51,7 @@ public class LibreriaTest {
         Mes enero2018 = new Mes(1, 2018);
         libreria.registrarCompra(elGrafico, pepe, enero2018);
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
-        Assert.assertEquals(100.0, montoDeCobroEnEneroParaPepe, 1);
+        Assert.assertEquals(95.0, montoDeCobroEnEneroParaPepe, 1);
     }
 
 }

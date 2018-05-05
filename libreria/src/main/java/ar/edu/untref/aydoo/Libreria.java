@@ -5,6 +5,8 @@ import java.util.List;
 
 public class Libreria {
 
+    private static final Double DESCUENTO_AL_CLIENTE = 0.05;
+
     private List<Compra> comprasEnLaLibreria = new ArrayList<Compra>();
 
 
@@ -20,7 +22,7 @@ public class Libreria {
                 montoDeCobro = compra.getProductoDeLaCompra().getPrecio();
             }
         }
-        return montoDeCobro;
+        return montoDeCobro - montoDeCobro * DESCUENTO_AL_CLIENTE;
     }
 
 }
