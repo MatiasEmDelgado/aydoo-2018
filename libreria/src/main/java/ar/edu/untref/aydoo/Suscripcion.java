@@ -23,6 +23,29 @@ public class Suscripcion extends Producto {
     }
 
     public Double getPrecio() {
-        return super.getPrecio()* mesesDeLaSuscripcion.size();
+        if(suscripcionConDescuento()) {
+            return (super.getPrecio() - super.getPrecio() * 0.2) * mesesDeLaSuscripcion.size();
+        } else {
+            return super.getPrecio()* mesesDeLaSuscripcion.size();
+        }
+
     }
+
+    private boolean suscripcionConDescuento(){
+        int contadorMesSuscripto = 0;
+        for(int i = 1; i < 13; i++){
+            for (Mes mes : mesesDeLaSuscripcion) {
+                if(i == mes.getNumeroDelMes()) {
+                    contadorMesSuscripto++;
+                }
+            }
+        }
+
+        if(contadorMesSuscripto == 12){
+            return true;
+        } else {
+          return false;
+        }
+    }
+
 }

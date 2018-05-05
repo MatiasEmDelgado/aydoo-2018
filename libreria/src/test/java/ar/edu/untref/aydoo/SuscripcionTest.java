@@ -19,7 +19,7 @@ public class SuscripcionTest {
     }
 
     @Test
-    public void unaSuscripcionDeCosto100ParaElMesDeAbrilYMayo2018DeberiaCostar200() {
+    public void unaSuscripcionDeCosto100ParaElMesDeAbrilYMayo2018DeberianCostar200() {
         Mes abril2018 = new Mes(4, 2018);
         Mes mayo2018 = new Mes(5, 2018);
         List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();

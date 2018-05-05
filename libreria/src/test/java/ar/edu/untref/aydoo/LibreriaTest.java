@@ -54,4 +54,39 @@ public class LibreriaTest {
         Assert.assertEquals(95.0, montoDeCobroEnEneroParaPepe, 1);
     }
 
+    @Test
+    public void elClienteAdquiereUnaSuscripcionParaTodoElAnio2018() {
+        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
+        Mes enero2018 = new Mes(1, 2018);
+        Mes febero2018 = new Mes(2, 2018);
+        Mes marzo2018 = new Mes(3, 2018);
+        Mes abril2018 = new Mes(4, 2018);
+        Mes mayo2018 = new Mes(5, 2018);
+        Mes junio2018 = new Mes(6, 2018);
+        Mes julio2018 = new Mes(7, 2018);
+        Mes agosto2018 = new Mes(8, 2018);
+        Mes septiembre2018 = new Mes(9, 2018);
+        Mes octubre2018 = new Mes(10, 2018);
+        Mes noviembre2018 = new Mes(11, 2018);
+        Mes diciembre2018 = new Mes(12, 2018);
+        List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();
+        mesesDeLaSuscripcion.add(enero2018);
+        mesesDeLaSuscripcion.add(febero2018);
+        mesesDeLaSuscripcion.add(marzo2018);
+        mesesDeLaSuscripcion.add(abril2018);
+        mesesDeLaSuscripcion.add(mayo2018);
+        mesesDeLaSuscripcion.add(junio2018);
+        mesesDeLaSuscripcion.add(julio2018);
+        mesesDeLaSuscripcion.add(agosto2018);
+        mesesDeLaSuscripcion.add(septiembre2018);
+        mesesDeLaSuscripcion.add(octubre2018);
+        mesesDeLaSuscripcion.add(noviembre2018);
+        mesesDeLaSuscripcion.add(diciembre2018);
+        Producto elGrafico = new Suscripcion(100.0, 2, mesesDeLaSuscripcion);
+        Libreria libreria = new Libreria ();
+        libreria.registrarCompra(elGrafico, pepe, enero2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
+        Assert.assertEquals(912.0, montoDeCobroEnEneroParaPepe, 1);
+    }
+
 }
