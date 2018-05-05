@@ -110,18 +110,7 @@ public class LibreriaTest {
 
     @Test
     public void elClienteAdquiereUnaSuscripcionDeTodosLosMesesPeroEnUnMesElAnioEsDistintoEntoncesNoDeberiaTenerDescuentoDeSuscripcion() {
-        enero2018 = new Mes(1, 2018);
-        febrero2018 = new Mes(2, 2018);
-        marzo2018 = new Mes(3, 2018);
-        abril2018 = new Mes(4, 2018);
-        mayo2018 = new Mes(5, 2018);
-        junio2018 = new Mes(6, 2018);
-        julio2018 = new Mes(7, 2018);
-        agosto2018 = new Mes(8, 2018);
-        septiembre2018 = new Mes(9, 2018);
-        octubre2018 = new Mes(10, 2018);
         Mes noviembre2019 = new Mes(11, 2019);
-        diciembre2018 = new Mes(12, 2018);
         List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();
         mesesDeLaSuscripcion.add(enero2018);
         mesesDeLaSuscripcion.add(febrero2018);
@@ -140,5 +129,22 @@ public class LibreriaTest {
         libreria.registrarCompra(productosDeLaCompra, pepe, enero2018);
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
         Assert.assertEquals(1140.0, montoDeCobroEnEneroParaPepe, 1);
+    }
+
+    @Test
+    public void elClienteCompraVariasCosasEnEneroYSeDeberiaAcumularElCostoTotalDelMes() {
+        Producto principito = new Libro(50.0);
+        Producto lapiz = new Articulo(20.0);
+        List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();
+        mesesDeLaSuscripcion.add(enero2018);
+        mesesDeLaSuscripcion.add(febrero2018);
+        mesesDeLaSuscripcion.add(marzo2018);
+        Producto elGrafico = new Suscripcion(100.0, 2, mesesDeLaSuscripcion);
+        productosDeLaCompra.add(principito);
+        productosDeLaCompra.add(lapiz);
+        productosDeLaCompra.add(elGrafico);
+        libreria.registrarCompra(productosDeLaCompra, pepe, enero2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
+        Assert.assertEquals(355.49, montoDeCobroEnEneroParaPepe, 1);
     }
 }

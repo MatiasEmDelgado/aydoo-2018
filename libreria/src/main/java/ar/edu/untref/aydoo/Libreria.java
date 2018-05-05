@@ -21,7 +21,7 @@ public class Libreria {
                     compra.getMesDeLaCompra().getNumeroDelMes() == mes.getNumeroDelMes()
                     && compra.getMesDeLaCompra().getAnioDelMes() == mes.getAnioDelMes()){
                 for (Producto producto : compra.getProductosDeLaCompra()) {
-                    montoDeCobro = producto.getPrecio();
+                    montoDeCobro = montoDeCobro + producto.getPrecio();
                 }
             }
         }
