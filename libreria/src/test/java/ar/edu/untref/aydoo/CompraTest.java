@@ -8,7 +8,7 @@ public class CompraTest {
 
     @Test
     public void unaCompraDeberiaDevolverCorrectamenteElLibroQueSeVendioEnLaCompra (){
-        Cliente pepe = new Cliente();
+        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
         Libro principito = new Libro(10.0);
         Compra compra = new Compra(principito, pepe, 1);
         Libro libroDeLaCompra = compra.getLibroDeLaCompra();
@@ -17,7 +17,7 @@ public class CompraTest {
 
     @Test
     public void unaCompraDeberiaDevolverCorrectamenteElQueRealizoLaCompra (){
-        Cliente pepe = new Cliente();
+        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
         Libro principito = new Libro(10.0);
         Compra compra = new Compra(principito, pepe, 1);
         Cliente clienteDeLaCompra = compra.getClienteDeLaCompra();
@@ -26,7 +26,7 @@ public class CompraTest {
 
     @Test
     public void unaCompraDeberiaDevolverCorrectamenteElMesEnElQueSeRealizoLaCompra (){
-        Cliente pepe = new Cliente();
+        Cliente pepe = new Cliente("Pepe", "Grillo", "Lavalle 430");
         Libro principito = new Libro(10.0);
         Compra compra = new Compra(principito, pepe, 1);
         int mesDeLaCompra = compra.getMesDeLaCompra();
