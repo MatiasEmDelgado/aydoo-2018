@@ -24,4 +24,13 @@ public class CompraTest {
         Assert.assertEquals(pepe, clienteDeLaCompra);
     }
 
+    @Test
+    public void unaCompraDeberiaDevolverCorrectamenteElMesEnElQueSeRealizoLaCompra (){
+        Cliente pepe = new Cliente();
+        Libro principito = new Libro(10.0);
+        Compra compra = new Compra(principito, pepe, 1);
+        int mesDeLaCompra = compra.getMesDeLaCompra();
+        Assert.assertEquals(1, mesDeLaCompra);
+    }
+
 }

@@ -19,4 +19,8 @@ public class Compra {
     public Cliente getClienteDeLaCompra() {
         return clienteDeLaCompra;
     }
+
+    public int getMesDeLaCompra() {
+        return mesDeLaCompra;
+    }
 }
