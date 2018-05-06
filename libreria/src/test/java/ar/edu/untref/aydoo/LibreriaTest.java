@@ -86,6 +86,19 @@ public class LibreriaTest {
     }
 
     @Test
+    public void elClienteRealizaDosComprasEnEnero() {
+        Producto lapiz = new Articulo(20.0);
+        Producto elPrincipito = new Libro(100);
+        productosDeLaCompra.add(lapiz);
+        ArrayList<Producto> productosDeLaSegundaCompra = new ArrayList<Producto>();
+        productosDeLaSegundaCompra.add(elPrincipito);
+        libreria.registrarCompra(productosDeLaCompra, pepe, enero2018);
+        libreria.registrarCompra(productosDeLaSegundaCompra, pepe, enero2018);
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
+        Assert.assertEquals(117.99, montoDeCobroEnEneroParaPepe, 1);
+    }
+
+    @Test
     public void elClienteAdquiereUnaSuscripcionParaTodoElAnio2018() {
 
         List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();
