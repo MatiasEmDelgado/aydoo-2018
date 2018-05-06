@@ -28,4 +28,17 @@ public class Libreria {
         return montoDeCobro - montoDeCobro * DESCUENTO_AL_CLIENTE;
     }
 
+    public Double obtenerMontoDeCobro(int anio, Cliente cliente) {
+        Double montoDeCobro = 0.0;
+        for (Compra compra : comprasEnLaLibreria) {
+            if (compra.getClienteDeLaCompra().equals(cliente)
+                    && compra.getMesDeLaCompra().getAnioDelMes() == anio){
+                for (Producto producto : compra.getProductosDeLaCompra()) {
+                    montoDeCobro = montoDeCobro + producto.getPrecio();
+                }
+            }
+        }
+        return montoDeCobro - montoDeCobro * DESCUENTO_AL_CLIENTE;
+    }
+
 }

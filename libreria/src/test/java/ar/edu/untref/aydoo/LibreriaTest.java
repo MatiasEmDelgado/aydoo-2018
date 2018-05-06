@@ -147,4 +147,46 @@ public class LibreriaTest {
         Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
         Assert.assertEquals(355.49, montoDeCobroEnEneroParaPepe, 1);
     }
+
+    @Test
+    public void elClienteCompraVariasCosasEn2018() {
+        Producto principito = new Libro(50.0);
+        Producto lapiz = new Articulo(20.0);
+        List<Mes> mesesDeLaSuscripcion = new ArrayList<Mes>();
+        mesesDeLaSuscripcion.add(enero2018);
+        mesesDeLaSuscripcion.add(febrero2018);
+        mesesDeLaSuscripcion.add(marzo2018);
+        Producto elGrafico = new Suscripcion(100.0, 2, mesesDeLaSuscripcion);
+        productosDeLaCompra.add(principito);
+        productosDeLaCompra.add(lapiz);
+        productosDeLaCompra.add(elGrafico);
+        libreria.registrarCompra(productosDeLaCompra, pepe, enero2018);
+
+        Producto dracula = new Libro(150.0);
+        Producto carpetaA4 = new Articulo(129.99);
+        Producto lapicera = new Articulo(25.0);
+        ArrayList<Producto> productosDeLaCompraDeJulio = new ArrayList<Producto>();
+        productosDeLaCompraDeJulio.add(dracula);
+        productosDeLaCompraDeJulio.add(carpetaA4);
+        productosDeLaCompraDeJulio.add(lapicera);
+        libreria.registrarCompra(productosDeLaCompraDeJulio, pepe, julio2018);
+
+        ArrayList<Mes> mesesDeLaSuscripcionOle = new ArrayList<Mes>();
+        mesesDeLaSuscripcionOle.add(septiembre2018);
+        mesesDeLaSuscripcionOle.add(octubre2018);
+        Producto ole = new Suscripcion(70, 4, mesesDeLaSuscripcionOle);
+        ArrayList<Producto> productosDeLaCompraSeptiembre = new ArrayList<Producto>();
+        productosDeLaCompraSeptiembre.add(ole);
+        libreria.registrarCompra(productosDeLaCompraSeptiembre, pepe, septiembre2018);
+
+        Double montoDeCobroEnEneroParaPepe = libreria.obtenerMontoDeCobro(enero2018, pepe);
+        Double montoDeCobroEnJulioParaPepe = libreria.obtenerMontoDeCobro(julio2018, pepe);
+        Double montoDeCobroEnSeptiembreParaPepe = libreria.obtenerMontoDeCobro(septiembre2018, pepe);
+        Double montoDeCobroAnualParaPepe = libreria.obtenerMontoDeCobro(2018, pepe);
+
+        Assert.assertEquals(355.49, montoDeCobroEnEneroParaPepe, 1);
+        Assert.assertEquals(320.66, montoDeCobroEnJulioParaPepe, 1);
+        Assert.assertEquals(133.0, montoDeCobroEnSeptiembreParaPepe, 1);
+        Assert.assertEquals(809.15, montoDeCobroAnualParaPepe, 1);
+    }
 }
