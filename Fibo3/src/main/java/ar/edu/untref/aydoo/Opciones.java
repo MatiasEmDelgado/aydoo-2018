@@ -10,7 +10,7 @@ public class Opciones {
 
     public Opciones(String[] entrada) {
         for(int i = 0; i < entrada.length; i++) {
-            if(entrada[i].length() == 1) {
+            if(esParseable(entrada[i])) {
                 numero = Integer.parseInt(entrada[i]);
             } else if(entrada[i].contains("-o=")) {
                 orientacion = entrada[i].charAt(3);
@@ -56,5 +56,15 @@ public class Opciones {
 
     public String getNombreArchivo() {
         return archivo;
+    }
+
+    private boolean esParseable(String input){
+        boolean parsable = true;
+        try{
+            Integer.parseInt(input);
+        }catch(Exception e){
+            parsable = false;
+        }
+        return parsable;
     }
 }
