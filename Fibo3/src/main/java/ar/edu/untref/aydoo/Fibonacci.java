@@ -4,12 +4,10 @@ import java.io.*;
 
 public final class Fibonacci {
 
-    public static final int OPCION_ORIENTACION = 3;
-    public static final int OPCION_DIRECCION = 4;
-
-    private Fibonacci() {
+    public Fibonacci() {
 
     }
+
     public static void main(final String[] args) throws IOException {
         Integer numero;
         char orientacion;
