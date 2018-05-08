@@ -40,7 +40,14 @@ public class Opciones {
     }
 
     public boolean opcionesValidas() {
-        return (orientacion == 'h' || orientacion == 'v') && (direccion == 'd' || direccion == 'i') && (numero != null);
+        boolean opcionValida = true;
+
+        if (((orientacion != 'h' && orientacion != 'v')
+                || (direccion != 'd' && direccion != 'i'))
+                || (numero == null)) {
+            opcionValida = false;
+        }
+        return opcionValida;
     }
 
     public char getModo() {
