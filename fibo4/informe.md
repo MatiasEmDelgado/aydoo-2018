@@ -101,3 +101,9 @@ Dependency inversion:
 En lineas generales el programa esta bastante bien, teniendo en cuenta que se hizo con poco tiempo, cumple con todas las
 consignas. Hay muchas cosas mejorar y falta aplicar algunos principios vistos en la clase (corrigiendo este me di cuenta
  de muchos errores en mi fibo), sobre todo en la 'S' y la 'O'.
+ 
+------------------------------------------------------------------------------------------------------------------------
+ 
+1º Cambio: 
+    por el momento lo que hice fue desacoplar un poco las responsabilidades de cada clase, creando nuevas y dejando las
+    dos que estaban un poco mas acotadas.
