@@ -1,56 +1,85 @@
 package ar.edu.untref.aydoo;
 
 public class InicializadorDeOpciones {
-    private char horizontalVertical = 'h';
-    private char directaInversa = 'd';
-    private char listaSumatoria = 'l';
-    private int numerosaMostrar;
-    private String archivoSalida = "";
 
-    public InicializadorDeOpciones(final String[] arg) {
-        String principioDelComando = "";
-        numerosaMostrar = Integer.parseInt(arg[arg.length - 1]);
-        for (String comandoActual : arg) {
-            if (comandoActual.length() > 3) {
-                principioDelComando = comandoActual.substring(0, 3);
-                switch (principioDelComando) {
-                    case "-o=":
-                        horizontalVertical = comandoActual.charAt(3);
-                        directaInversa = comandoActual.charAt(4);
-                        break;
-                    case "-m=":
-                        listaSumatoria = comandoActual.charAt(3);
-                        break;
-                    case "-f=":
-                        archivoSalida = comandoActual.substring(3);
-                        break;
-                }
+    private char orientacion;
+    private char direccion;
+    private char modo;
+    private Integer numero;
+    private String archivo;
+    private char numerosAImprimir;
+
+    public InicializadorDeOpciones(String[] entrada) {
+        for(int i = 0; i < entrada.length; i++) {
+            if(esParseable(entrada[i])) {
+                numero = Integer.parseInt(entrada[i]);
+            } else if(entrada[i].contains("-o=")) {
+                orientacion = entrada[i].charAt(3);
+                direccion = entrada[i].charAt(4);
+            } else if (entrada[i].contains("-f=")) {
+                archivo = entrada[i].substring(3);
+            } else if (entrada[i].contains("-m=")) {
+                modo = entrada[i].charAt(3);
+            } else if (entrada[i].contains("-n=p")) {
+                numerosAImprimir = 'p';
             }
         }
+        if(orientacion == '\0') {orientacion = 'h';}
+        if(direccion == '\0') {direccion = 'd';}
+    }
+
+    public char getOrientacion() {
+        return orientacion;
+    }
+
+    public char getDireccion() {
+        return direccion;
+    }
+
+    public String getArchivo() {
+        return archivo;
+    }
+
+    public Integer getNumero() {
+        return numero;
+    }
+
+    public char getNumerosAImprimir() {
+        if( numerosAImprimir == '\0') {
+            numerosAImprimir = 't';
+        }
+        return numerosAImprimir;
     }
 
     public boolean opcionesValidas() {
-        return (horizontalVertical == 'h' || horizontalVertical == 'v')
-                && (directaInversa == 'i' || directaInversa == 'd');
+        boolean opcionValida = true;
+
+        if (((orientacion != 'h' && orientacion != 'v' && orientacion != 'p')
+                || (direccion != 'd' && direccion != 'i'))
+                || (numero == null)) {
+            opcionValida = false;
+        }
+        return opcionValida;
     }
 
-    public char getDirectaInversa() {
-        return directaInversa;
+    public char getModo() {
+        if(modo == '\0'){
+            modo = 'l';
+        }
+        return modo;
     }
 
-    public char getHorizontalVertical() {
-        return horizontalVertical;
+    public String getNombreArchivo() {
+        return archivo;
     }
 
-    public char getListaSumatoria() {
-        return listaSumatoria;
-    }
-
-    public int getNumerosaMostrar() {
-        return numerosaMostrar;
-    }
-
-    public String getArchivoSalida() {
-        return archivoSalida;
+    private boolean esParseable(String input){
+        boolean parsable = true;
+        try{
+            Integer.parseInt(input);
+        }catch(Exception e){
+            parsable = false;
+        }
+        return parsable;
     }
 }

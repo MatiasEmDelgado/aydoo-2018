@@ -10,8 +10,8 @@ public class EscribidorFibonacci {
     int numerosAMostrar;
 
     public EscribidorFibonacci (InicializadorDeOpciones opciones){
-        archivo = opciones.getArchivoSalida();
-        numerosAMostrar = opciones.getNumerosaMostrar();
+        archivo = opciones.getNombreArchivo();
+        numerosAMostrar = opciones.getNumero();
     }
     public void escribirEnSalida(String textoDeSalida) {
         System.out.println("fibo<" + numerosAMostrar + "> guardado en " + archivo);
