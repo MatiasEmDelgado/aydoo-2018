@@ -75,7 +75,11 @@ public class FibonacciCalculador {
     public String mostrarFiboHorizontal() {
         String cadenaAMostrar = "";
         for (int i = 0; i < this.fibo.length; i++) {
-            cadenaAMostrar += (" " + this.fibo[i]);
+            if (i == 0) {
+                cadenaAMostrar += (this.fibo[i]);
+            } else {
+                cadenaAMostrar += (" " + this.fibo[i]);
+            }
         }
         return cadenaAMostrar;
     }
