@@ -17,13 +17,6 @@ public class Fibonacci {
         char numerosAImprimir = opciones.getNumerosAImprimir();
         String nombreArchivo = opciones.getNombreArchivo();
 
-        System.out.println("numero: " + numero);
-        System.out.println("direccion :" + direccion);
-        System.out.println("modo: " + modo);
-        System.out.println("orientacion: " + orientacion);
-        System.out.println("archivo: " + nombreArchivo);
-        System.out.println("pares: " + numerosAImprimir);
-
         FibonacciCalculador fibo = new FibonacciCalculador(numero);
         if (direccion == 'i') {
             fibo.invertir();
