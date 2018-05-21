@@ -10,22 +10,31 @@ public class InicializadorDeOpciones {
     private char numerosAImprimir;
 
     public InicializadorDeOpciones(String[] entrada) {
-        for(int i = 0; i < entrada.length; i++) {
-            if(esParseable(entrada[i])) {
-                numero = Integer.parseInt(entrada[i]);
-            } else if(entrada[i].contains("-o=")) {
-                orientacion = entrada[i].charAt(3);
-                direccion = entrada[i].charAt(4);
-            } else if (entrada[i].contains("-f=")) {
-                archivo = entrada[i].substring(3);
-            } else if (entrada[i].contains("-m=")) {
-                modo = entrada[i].charAt(3);
-            } else if (entrada[i].contains("-n=p")) {
-                numerosAImprimir = 'p';
+        if(entrada.length != 0) {
+            for(int i = 0; i < entrada.length; i++) {
+                if(esParseable(entrada[i])) {
+                    numero = Integer.parseInt(entrada[i]);
+                } else if(entrada[i].contains("-o=")) {
+                    orientacion = entrada[i].charAt(3);
+                    direccion = entrada[i].charAt(4);
+                } else if (entrada[i].contains("-f=")) {
+                    archivo = entrada[i].substring(3);
+                } else if (entrada[i].contains("-m=")) {
+                    modo = entrada[i].charAt(3);
+                } else if (entrada[i].contains("-n=p")) {
+                    numerosAImprimir = 'p';
+                }
             }
+            if(orientacion == '\0') {orientacion = 'h';}
+            if(direccion == '\0') {direccion = 'd';}
+
+        } else {
+            orientacion = 'x';
+            direccion = 'x';
+            modo = 'x';
+            numerosAImprimir = 'x';
+            numero = 0;
         }
-        if(orientacion == '\0') {orientacion = 'h';}
-        if(direccion == '\0') {direccion = 'd';}
     }
 
     public char getOrientacion() {
