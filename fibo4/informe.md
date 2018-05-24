@@ -107,3 +107,20 @@ consignas. Hay muchas cosas mejorar y falta aplicar algunos principios vistos en
 1º Cambio: 
     por el momento lo que hice fue desacoplar un poco las responsabilidades de cada clase, creando nuevas y dejando las
     dos que estaban un poco mas acotadas.
+2º Cambio:
+   dado al tiempo que tenia para hacer el ejercicio, mas alla de haber remarcado los problemas del codigo con respecto a
+   solid, decidi segiur el estilo del codigo ya existenta. Para agregar las nuevas opciones decidi extender el switch
+   case que ya estaba y agregar mas metodos a mi nueva clase FibonacciCalculador. Me hubiera gustado hacer distintas
+   variantes para "FibonacciCalculador"  y directamente pedirle los valores de impresion a cada instancia en particular;
+   pero dado el tiempo, decidi solo agregarle metodos segun la salida que se tenia que mostrar.
+------------------------------------------------------------------------------------------------------------------------
+
+La complejidad que tuve y el motivo que me llevo a hacer el metodo "mostrarFiboProgresivoPar" de esa manera, fue
+(ademas del tiempo) la complejidad de "separar" el String de salida que la consola debia mostrar a la hora de imprimir
+la progrecion de Fibonacci de numeros pares. Debido a que el String de salida del programa en este caso
+es una sola cadena (aunque se muestre en distintas lineas), y debido a que al tener que mostrar solo los pares no
+duplicados, era muy complejo ver qué lineas no eran repetidas mostrando solo los numeros pares. Por ese motivo, decidi
+hacer un metodo aparte para solucionar este caso complejo, para no romper el otro caso de "mostrarFiboProgresivo" que
+era mucho mas simple, y luego una vez teniendo todo funcionando, refactorizarlo. El problema fue que no tuve mas tiempo
+para refactorizar ese ultimo metodo que quedo muy largo y tuve que entregar. Habria que ver las cosas que tienen en
+comun ambos metodos y separarlos, ó, mejor aun, implementar las otras clases de FibonacciCalculador.
